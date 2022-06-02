@@ -35,4 +35,72 @@
         \end{align}
     \end{itemize}
 \end{pf}
+
+\begin{prob}[20 分]
+    有如下几种单模辐射场, 分别计算它们的光子数分布函数 $p(m)$:
+    \begin{itemize}
+        \item[(1)] 数态的叠加 $\lvert\psi\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 10\rangle)$;
+        \item[(2)] $\rho=\sum_{n=0}^{\infty}\frac{e^{-\kappa}\kappa^n}{n!}\lvert n\rangle\langle n\rvert$, $\kappa\in\mathbb{R}^+$;
+        \item[(3)] 湮灭掉一个光子的热光场 $\rho'=\frac{a\rho a^{\dagger}}{\tr[a\rho a^{\dagger}]}$, 其中 $\rho$ 是热光场, 即\\
+        $\rho=\frac{1}{1+\langle n\rangle}\sum_{n=0}^{\infty}\left(\frac{\langle n\rangle}{1+\langle n\rangle}\right)^n\lvert n\rangle\langle n\rvert$, $\langle n\rangle$ 是 $\rho$ 光场的平均光子数.
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    \begin{itemize}
+        \item[(1)] 该叠加态的光子数分布函数为
+        \begin{align}
+            p(m)=\abs{\langle m\vert\psi\rangle}^2=\frac{1}{2}\abs{\delta_{m0}+\delta_{m,10}}^2.
+        \end{align}
+        \item[(2)] 该辐射场的光子数分布函数为
+        \begin{align}
+            p(m)=\langle m\rvert\rho\lvert m\rangle=\frac{e^{-\kappa}\kappa^m}{m!}.
+        \end{align}
+        \item[(3)] 
+        \begin{align}
+            a\rho a^{\dagger}=&\frac{1}{1+\langle n\rangle}\sum_{n=0}^{\infty}\left(\frac{\langle n\rangle}{1+\langle n\rangle}\right)^{n+1}(n+1)\lvert n\rangle\langle n\rvert,\\
+            \notag\tr[a\rho a^{\dagger}]=&\frac{1}{1+\langle n\rangle}\sum_{n=0}^{\infty}\left(\frac{\langle n\rangle}{1+\langle n\rangle}\right)^{n+1}(n+1)=\frac{1}{1+\langle n\rangle}\sum_{n=1}^{\infty}x^nn,
+        \end{align}
+        其中 $x=\frac{\langle n\rangle}{1+\langle n\rangle}$, 令 $f=\sum_{n=1}^{\infty}x^nn$, 由于 $xf=\sum_{n=1}^{\infty}x^{n+1}n$, $f-xf=x+\sum_{n=2}^{\infty}x^n=x+\frac{x^2}{1-x}=\frac{x}{1-x}$, 故 $f=\frac{x}{(1-x)^2}$,
+        \begin{align}
+            \tr[a\rho a^{\dagger}]=&\langle n\rangle.
+        \end{align}
+        该湮灭掉一个光子的热光场的密度矩阵为
+        \begin{align}
+            \rho'=\frac{a\rho a^{\dagger}}{\tr[a\rho a^{\dagger}]}=\sum_{n=0}^{\infty}\frac{\langle n\rangle^n}{(1+\langle n\rangle)^{n+2}}(n+1)\lvert n\rangle\langle n\rvert.
+        \end{align}
+        其光子数分布函数为
+        \begin{align}
+            p(m)=\langle m\rvert\rho'\lvert m\rangle=\frac{\langle n\rangle^m}{(1+\langle n\rangle)^{m+2}}(m+1).
+        \end{align}
+    \end{itemize}
+\end{sol}
+
+\begin{prob}[20 分]
+    试通过计算判断, 上题 (1) 中的辐射场的光子数分布为何种分布 (Poisson, Sub-Poisson, Super-Poisson)?
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}[20 分]
+    增加了一个光子的相干态 (Single-phtono-add coherent state (SPACS)) $\lvert\alpha,1\rangle=\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle$. 考虑该辐射场的两个厄米算符 $X_1=\frac{1}{2}(a+a^{\dagger})$, $X_2=\frac{1}{2i}(a-a^{\dagger})$. 它们分别对应于场的复振幅的实部和虚部. 证明:\\
+    SPACS 态 $\lvert\alpha,1\rangle$ 当 $\abs{\alpha}>1$ 时是压缩态, (本题取 $\alpha\in\mathbb{R}^{\dagger}$).
+\end{prob}
+\begin{pf}
+    
+\end{pf}
+
+\begin{prob}[20 分]
+    考虑一个理想的光学腔, 腔里有单模辐射场 $\lvert\phi_0\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)$. 处于基态且与单模场共振的两能级原子 $\lvert\psi_i\rangle=\lvert b\rangle$ 进入该光学腔, 与辐射场发生反应, 反应过程中相互作用的哈密顿量为 $V=\hbar g(\sigma_+a+a^{\dagger}\sigma_-)$. 系统的演化方程为 $\Psi(t)=e^{-\frac{i}{\hbar}Vt}\lvert\psi_i\rangle\otimes\lvert\phi\rangle$. 反应一段时间后原子从腔中逸出. \textbf{经探测: 出射原子已经从腔中吸收一个光子而被激发, 且处于 $\lvert\psi_f\rangle=\lvert a\rangle$ 激发态.}
+    \begin{itemize}
+        \item[(1)] 计算该单模场初始时刻 $\lvert\phi_0\rangle$ 的平均光子数 $\bar{n}$;
+        \item[(2)] 试讨论, 在腔中被吸收一个光子的情况下: 此时腔内的辐射场的平均光子数变为多少? 此时辐射场的光子数分布为何种分布 (Poisson, Sub-Poisson, Super-Poisson)?
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    \begin{itemize}
+        \item[(1)] 
+        \item[(2)] 
+    \end{itemize}
+\end{sol}
 \end{document}
