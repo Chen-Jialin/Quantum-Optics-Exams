@@ -79,7 +79,11 @@
     试通过计算判断, 上题 (1) 中的辐射场的光子数分布为何种分布 (Poisson, Sub-Poisson, Super-Poisson)?
 \end{prob}
 \begin{sol}
-    
+    上题 (1) 中的辐射场二阶相关度为
+    \begin{align}
+        g^{(2)}(0)=\frac{\langle a^{\dagger}a^{\dagger}aa\rangle}{\langle a^{\dagger}a\rangle^2}=\frac{\frac{1}{\sqrt{2}}(\langle 0\rvert+i\langle 10\rvert)a^{\dagger}a^{\dagger}aa\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 10\rangle)}{\left[\frac{1}{\sqrt{2}}(\langle 0\rvert+i\langle 10\rvert)a^{\dagger}a\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 10\rangle)\right]^2}=\frac{9}{5}>1,
+    \end{align}
+    故该辐射场的光子数分布为超泊松分布.
 \end{sol}
 
 \begin{prob}[20 分]
