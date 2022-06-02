@@ -1,0 +1,38 @@
+\documentclass{assignment}
+\ProjectInfos{量子光学}{PHYS6251P}{2011 年}{期末考试}{}{陈稼霖}[https://github.com/Chen-Jialin]{SA21038052}
+
+\begin{document}
+\begin{prob}[20 分]
+    产生湮灭算符 $a^{\dagger}$, $a$ 满足对易关系 $[a,a^{\dagger}]=1$, 且 $[a,(a^{\dagger})^n]=n(a^{\dagger})^{n-1}$, 试证:
+    \begin{itemize}
+        \item[(i)] $[a^{\dagger},a^m]=-ma^{m-1}$;
+        \item[(ii)] $a(a^{\dagger})^na^ma^{\dagger}=(a^{\dagger})^{n+1}a^{m+1}+(m+n+1)(a^{\dagger})^na^m+mn(a^{\dagger})^{n-1}a^{m-1}$.
+    \end{itemize}
+\end{prob}
+\begin{pf}
+    \begin{itemize}
+        \item[(i)] 利用数学归纳法证明:
+        \begin{itemize}
+            \item 当 $m=1$ 时,
+            \begin{align}
+                [a^{\dagger},a^1]=-1=-1\cdot a^{1-1}.
+            \end{align}
+            \item 假设当 $m=k$ 时,
+            \begin{align}
+                [a^{\dagger},a^k]=-ka^{k-1},
+            \end{align}
+            则当 $m=k+1$ 时,
+            \begin{align}
+                [a^{\dagger},a^{k+1}]=[a^{\dagger},a^k]a+a^k[a^{\dagger},a]=-ka^{k-1}a+a^k\cdot(-1)=-(k+1)a^k=-(k+1)a^{(k+1)-1}.
+            \end{align}
+        \end{itemize}
+        综上, $[a^{\dagger},a^m]=-ma^{m-1}$.
+        \item[(ii)] 
+        \begin{align}
+            \notag a(a^{\dagger})^na^ma^{\dagger}=&[(a^{\dagger})^na+n(a^{\dagger})^{n-1}]a^ma^{\dagger}=(a^{\dagger})^na^{m+1}a^{\dagger}+n(a^{\dagger})^{n-1}a^ma^{\dagger}\\
+            \notag=&(a^{\dagger})^n[a^{\dagger}a^{m+1}+(m+1)a^m]+n(a^{\dagger})^{n-1}[a^{\dagger}a^m+ma^{m-1}]\\
+            =&(a^{\dagger})^{n+1}a^{m+1}+(m+n+1)(a^{\dagger})^na^m+mn(a^{\dagger})^{n-1}a^{m-1}.
+        \end{align}
+    \end{itemize}
+\end{pf}
+\end{document}
