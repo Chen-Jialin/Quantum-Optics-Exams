@@ -88,14 +88,41 @@
 
 \begin{prob}[20 分]
     增加了一个光子的相干态 (Single-phtono-add coherent state (SPACS)) $\lvert\alpha,1\rangle=\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle$. 考虑该辐射场的两个厄米算符 $X_1=\frac{1}{2}(a+a^{\dagger})$, $X_2=\frac{1}{2i}(a-a^{\dagger})$. 它们分别对应于场的复振幅的实部和虚部. 证明:\\
-    SPACS 态 $\lvert\alpha,1\rangle$ 当 $\abs{\alpha}>1$ 时是压缩态, (本题取 $\alpha\in\mathbb{R}^{\dagger}$).
+    SPACS 态 $\lvert\alpha,1\rangle$ 当 $\abs{\alpha}>1$ 时是压缩态, (本题取 $\alpha\in\mathbb{R}^+$).
 \end{prob}
 \begin{pf}
-    
+    $X_1$ 的均值:
+    \begin{align}
+        \notag\langle X_1\rangle=&\langle\alpha\rvert\frac{a}{\sqrt{1+\abs{\alpha}^2}}\frac{1}{2}(a+a^{\dagger})\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle=\frac{1}{2(1+\alpha^2)}\langle\alpha\rvert(aaa^{\dagger}+aa^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2(1+\alpha^2)}\langle\alpha\rvert[a(a^{\dagger}a+1)+(a^{\dagger}a+1)a^{\dagger}]\lvert\alpha\rangle=\frac{1}{2(1+\alpha^2)}\langle\alpha\rvert(aa^{\dagger}a+a+a^{\dagger}aa^{\dagger}+a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2(1+\alpha^2)}\langle\alpha\rvert[(a^{\dagger}a+1)a+a+a^{\dagger}(a^{\dagger}a+1)+a^{\dagger}]\lvert\alpha\rangle=\frac{1}{2(1+\alpha^2)}\langle\alpha\rvert(a^{\dagger}aa+2a+a^{\dagger}a^{\dagger}a+2a^{\dagger})\lvert\alpha\rangle\\
+        =&\frac{\alpha(2+\alpha^2)}{1+\alpha^2}.
+    \end{align}
+    $X_1^2$ 的均值:
+    \begin{align}
+        \notag\langle X_1^2\rangle=&\langle\alpha\rvert\frac{a}{\sqrt{1+\abs{\alpha}^2}}\left[\frac{1}{2}(a+a^{\dagger})\right]^2\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle=\frac{1}{4(1+\alpha^2)}\langle\alpha\rvert(aaaa+aaa^{\dagger}a^{\dagger}+aa^{\dagger}aa^{\dagger}+aa^{\dagger}a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{4(1+\alpha^2)}\langle\alpha\rvert[aaaa+a(a^{\dagger}a+1)a^{\dagger}+aa^{\dagger}aa^{\dagger}+(a^{\dagger}a+1)a^{\dagger}a^{\dagger}]\lvert\alpha\rangle\\
+        \notag=&\frac{1}{4(1+\alpha^2)}\langle\alpha\rvert(aaaa+2aa^{\dagger}aa^{\dagger}+aa^{\dagger}+a^{\dagger}aa^{\dagger}a^{\dagger}+a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{4(1+\alpha^2)}\langle\alpha\rvert(aaaa+2(a^{\dagger}a+1)(a^{\dagger}a+1)+(a^{\dagger}a+1)+a^{\dagger}(a^{\dagger}a+1)a^{\dagger}+a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{4(1+\alpha^2)}\langle\alpha\rvert(aaaa+2a^{\dagger}aa^{\dagger}a+5a^{\dagger}a+3+a^{\dagger}a^{\dagger}aa^{\dagger}+2a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{4(1+\alpha^2)}\langle\alpha\rvert(aaaa+2a^{\dagger}(a^{\dagger}a+1)a+5a^{\dagger}a+3+a^{\dagger}a^{\dagger}(a^{\dagger}a+1)+2a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{4(1+\alpha^2)}\langle\alpha\rvert(aaaa+2a^{\dagger}a^{\dagger}aa+7a^{\dagger}a+3+a^{\dagger}a^{\dagger}a^{\dagger}a+3a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        =&\frac{4\alpha^4+10\alpha^2+3}{4(1+\alpha^2)}.
+    \end{align}
+    $X_1$ 的涨落:
+    \begin{align}
+        \Delta X_1=\sqrt{\langle X_1^2\rangle-\langle X_1\rangle^2}=\frac{\sqrt{-2\alpha^4-3\alpha^2+3}}{2(1+\alpha^2)^2}.
+    \end{align}
+    若 $\lvert\alpha,1\rangle$ 为压缩态, 则
+    \begin{gather}
+        \Delta X_1\neq\frac{1}{2},\\
+        \Longrightarrow\alpha\neq 1.
+    \end{gather}
+    故当 $\abs{\alpha}>1$ 时, $\lvert\alpha,1\rangle$ 为压缩态.
 \end{pf}
 
 \begin{prob}[20 分]
-    考虑一个理想的光学腔, 腔里有单模辐射场 $\lvert\phi_0\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)$. 处于基态且与单模场共振的两能级原子 $\lvert\psi_i\rangle=\lvert b\rangle$ 进入该光学腔, 与辐射场发生反应, 反应过程中相互作用的哈密顿量为 $V=\hbar g(\sigma_+a+a^{\dagger}\sigma_-)$. 系统的演化方程为 $\Psi(t)=e^{-\frac{i}{\hbar}Vt}\lvert\psi_i\rangle\otimes\lvert\phi\rangle$. 反应一段时间后原子从腔中逸出. \textbf{经探测: 出射原子已经从腔中吸收一个光子而被激发, 且处于 $\lvert\psi_f\rangle=\lvert a\rangle$ 激发态.}
+    考虑一个理想的光学腔, 腔里有单模辐射场 $\lvert\phi_0\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)$. 处于基态且与单模场共振的两能级原子 $\lvert\psi_i\rangle=\lvert b\rangle$ 进入该光学腔, 与辐射场发生反应, 反应过程中相互作用的哈密顿量为 $\mathscr{V}=\hbar g(\sigma_+a+a^{\dagger}\sigma_-)$. 系统的演化方程为 $\Psi(t){A+F}=e^{-\frac{i}{\hbar}\mathscr{V}t}\lvert\psi_i\rangle\otimes\lvert\phi\rangle$. 反应一段时间后原子从腔中逸出. \textbf{经探测: 出射原子已经从腔中吸收一个光子而被激发, 且处于 $\lvert\psi_f\rangle=\lvert a\rangle$ 激发态.}
     \begin{itemize}
         \item[(1)] 计算该单模场初始时刻 $\lvert\phi_0\rangle$ 的平均光子数 $\bar{n}$;
         \item[(2)] 试讨论, 在腔中被吸收一个光子的情况下: 此时腔内的辐射场的平均光子数变为多少? 此时辐射场的光子数分布为何种分布 (Poisson, Sub-Poisson, Super-Poisson)?
@@ -103,8 +130,58 @@
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[(1)] 
-        \item[(2)] 
+        \item[(1)] 该单模场初始时刻 $\lvert\phi_0\rangle$ 的平均光子数为
+        \begin{align}
+            \bar{n}=\langle\phi_0\rvert a^{\dagger}a\lvert\phi_0\rangle=\frac{1}{2}.
+        \end{align}
+        \item[(2)] 无微扰哈密顿量为
+        \begin{align}
+            \hat{H}_0=\hbar\nu a^{\dagger}a+\frac{1}{2}\hbar\omega\sigma_z.
+        \end{align}
+        相互作用绘景中, 相互作用哈密顿量为
+        \begin{align}
+            \hat{V}=e^{i\hat{H}_0t/\hbar}\mathscr{V}e^{-i\hat{H}_0t/\hbar}=\hbar g(\sigma_+ae^{i\Delta t}+a^{\dagger}\sigma_-e^{-i\Delta t}),
+        \end{align}
+        其中 $\Delta=\omega-\nu$.
+        将系统的量子态
+        \begin{align}
+            \lvert\Psi(t)\rangle_{A+F}=\sum_{n=0}^{\infty}(C_{a,n}(t)\lvert a,n\rangle+C_{b,n}(t)\lvert b,n\rangle)
+        \end{align}
+        代入薛定谔方程
+        \begin{align}
+            i\hbar\frac{\partial}{\partial t}\lvert\Psi(t)\rangle=\hat{V}\lvert\psi(t)\rangle
+        \end{align}
+        有
+        \begin{align}
+            \dot{C}_{a,n}(t)=&-igC_{b,n+1}\sqrt{n+1}e^{i\Delta t},\\
+            \dot{C}_{b,n}(t)=&-igC_{a,n}\sqrt{n+1}e^{-i\Delta t},
+        \end{align}
+        解得
+        \begin{align}
+            C_{a,n}(t)=&\left\{C_{a,n}(0)\left[\cos\left(\frac{\Omega_nt}{2}\right)-\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]-\frac{2ig\sqrt{n+1}}{\Omega_n}C_{b,n+1}(0)\sin\left(\frac{\Omega_nt}{2}\right)\right\}e^{i\Delta t/2},\\
+            C_{b,n+1}=&\left\{C_{b,n+1}(0)\left[\cos\left(\frac{\Omega_nt}{2}\right)+\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]-\frac{2ig\sqrt{n+1}}{\Omega_n}C_{a,n}(0)\sin\left(\frac{\Omega_nt}{2}\right)\right\}e^{-i\Delta t/2},
+        \end{align}
+        其中 $\Omega_n^2=\Delta^2+4g^2(n+1)$.
+        考虑到系统的初始状态
+        \begin{align}
+            \lvert\Psi(0)\rangle_{A+F}=\lvert b\rangle\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle),
+        \end{align}
+        即 $C_{b,0}(0)=\frac{1}{\sqrt{2}}$, $C_{b,1}=-\frac{i}{\sqrt{2}}$,
+        故
+        \begin{align}
+            C_{a,0}(t)=&-\frac{\sqrt{2}g\sqrt{n+1}}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)e^{i\Delta t/2},\\
+            C_{b,1}(t)=&-\frac{i}{\sqrt{2}}\left[\cos\left(\frac{\Omega_nt}{2}\right)+\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]e^{-i\Delta t/2},
+        \end{align}
+        即系统的量子态演化方程为
+        \begin{align}
+            \notag\lvert\Psi(t)\rangle_{A+F}=&-\frac{\sqrt{2}g\sqrt{n+1}}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)e^{i\Delta t/2}\lvert a,0\rangle-\frac{i}{\sqrt{2}}\left[\cos\left(\frac{\Omega_nt}{2}\right)+\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]e^{-i\Delta t/2}\lvert b,1\rangle\\
+            &+\frac{1}{\sqrt{2}}\lvert b,0\rangle.
+        \end{align}
+        当探测得 $\lvert\psi_f\rangle=\lvert a\rangle$ 时, 系统的量子态塌缩至
+        \begin{align}
+            \lvert\Psi_f\rangle=\lvert a,0\rangle.
+        \end{align}
+        此时腔内的辐射场的平均光子数为 $0$, 辐射场的光子数分布为亚泊松分布.
     \end{itemize}
 \end{sol}
 \end{document}
