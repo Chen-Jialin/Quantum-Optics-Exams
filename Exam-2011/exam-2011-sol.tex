@@ -122,7 +122,7 @@
 \end{pf}
 
 \begin{prob}[20 分]
-    考虑一个理想的光学腔, 腔里有单模辐射场 $\lvert\phi_0\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)$. 处于基态且与单模场共振的两能级原子 $\lvert\psi_i\rangle=\lvert b\rangle$ 进入该光学腔, 与辐射场发生反应, 反应过程中相互作用的哈密顿量为 $\mathscr{V}=\hbar g(\sigma_+a+a^{\dagger}\sigma_-)$. 系统的演化方程为 $\Psi(t){A+F}=e^{-\frac{i}{\hbar}\mathscr{V}t}\lvert\psi_i\rangle\otimes\lvert\phi\rangle$. 反应一段时间后原子从腔中逸出. \textbf{经探测: 出射原子已经从腔中吸收一个光子而被激发, 且处于 $\lvert\psi_f\rangle=\lvert a\rangle$ 激发态.}
+    考虑一个理想的光学腔, 腔里有单模辐射场 $\lvert\phi_0\rangle=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 10\rangle)$. 处于基态且与单模场共振的两能级原子 $\lvert\psi_i\rangle=\lvert b\rangle$ 进入该光学腔, 与辐射场发生反应, 反应过程中相互作用的哈密顿量为 $\mathscr{V}=\hbar g(\sigma_+a+a^{\dagger}\sigma_-)$. 系统的演化方程为 $\Psi(t){A+F}=e^{-\frac{i}{\hbar}\mathscr{V}t}\lvert\psi_i\rangle\otimes\lvert\phi\rangle$. 反应一段时间后原子从腔中逸出. \textbf{经探测: 出射原子已经从腔中吸收一个光子而被激发, 且处于 $\lvert\psi_f\rangle=\lvert a\rangle$ 激发态.}
     \begin{itemize}
         \item[(1)] 计算该单模场初始时刻 $\lvert\phi_0\rangle$ 的平均光子数 $\bar{n}$;
         \item[(2)] 试讨论, 在腔中被吸收一个光子的情况下: 此时腔内的辐射场的平均光子数变为多少? 此时辐射场的光子数分布为何种分布 (Poisson, Sub-Poisson, Super-Poisson)?
@@ -132,7 +132,7 @@
     \begin{itemize}
         \item[(1)] 该单模场初始时刻 $\lvert\phi_0\rangle$ 的平均光子数为
         \begin{align}
-            \bar{n}=\langle\phi_0\rvert a^{\dagger}a\lvert\phi_0\rangle=\frac{1}{2}.
+            \bar{n}=\langle\phi_0\rvert a^{\dagger}a\lvert\phi_0\rangle=5.
         \end{align}
         \item[(2)] 无微扰哈密顿量为
         \begin{align}
@@ -164,24 +164,24 @@
         其中 $\Omega_n^2=\Delta^2+4g^2(n+1)$.
         考虑到系统的初始状态
         \begin{align}
-            \lvert\Psi(0)\rangle_{A+F}=\lvert b\rangle\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle),
+            \lvert\Psi(0)\rangle_{A+F}=\lvert b\rangle\otimes\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 10\rangle),
         \end{align}
-        即 $C_{b,0}(0)=\frac{1}{\sqrt{2}}$, $C_{b,1}=-\frac{i}{\sqrt{2}}$,
+        即 $C_{b,0}(0)=\frac{1}{\sqrt{2}}$, $C_{b,10}=-\frac{i}{\sqrt{2}}$,
         故
         \begin{align}
-            C_{a,0}(t)=&-\frac{\sqrt{2}g\sqrt{n+1}}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)e^{i\Delta t/2},\\
-            C_{b,1}(t)=&-\frac{i}{\sqrt{2}}\left[\cos\left(\frac{\Omega_nt}{2}\right)+\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]e^{-i\Delta t/2},
+            C_{a,9}(t)=&-\frac{\sqrt{2}g\sqrt{n+1}}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)e^{i\Delta t/2},\\
+            C_{b,10}(t)=&-\frac{i}{\sqrt{2}}\left[\cos\left(\frac{\Omega_nt}{2}\right)+\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]e^{-i\Delta t/2},
         \end{align}
         即系统的量子态演化方程为
         \begin{align}
-            \notag\lvert\Psi(t)\rangle_{A+F}=&-\frac{\sqrt{2}g\sqrt{n+1}}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)e^{i\Delta t/2}\lvert a,0\rangle-\frac{i}{\sqrt{2}}\left[\cos\left(\frac{\Omega_nt}{2}\right)+\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]e^{-i\Delta t/2}\lvert b,1\rangle\\
+            \notag\lvert\Psi(t)\rangle_{A+F}=&-\frac{\sqrt{2}g\sqrt{n+1}}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)e^{i\Delta t/2}\lvert a,9\rangle-\frac{i}{\sqrt{2}}\left[\cos\left(\frac{\Omega_nt}{2}\right)+\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]e^{-i\Delta t/2}\lvert b,10\rangle\\
             &+\frac{1}{\sqrt{2}}\lvert b,0\rangle.
         \end{align}
         当探测得 $\lvert\psi_f\rangle=\lvert a\rangle$ 时, 系统的量子态塌缩至
         \begin{align}
-            \lvert\Psi_f\rangle=\lvert a,0\rangle.
+            \lvert\Psi_f\rangle=\lvert a,9\rangle.
         \end{align}
-        此时腔内的辐射场的平均光子数为 $0$, 辐射场的光子数分布为亚泊松分布.
+        此时腔内的辐射场的平均光子数为 $9$, 辐射场的光子数分布为亚泊松分布.
     \end{itemize}
 \end{sol}
 \end{document}
