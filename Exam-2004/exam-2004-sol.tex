@@ -31,9 +31,67 @@
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[(1)] 
-        \item[(2)] 
-        \item[(3)] 
+        \item[(1)] 由归一化条件,
+        \begin{align}
+            \notag\langle\psi\vert\psi\rangle=&\abs{N}^2(\langle\alpha\rvert+e^{-i\theta}\langle-\alpha\rvert)(\lvert\alpha\rangle+e^{i\theta}\lvert-\alpha\rangle)\\
+            \notag=&\abs{N}^2(\langle\alpha\vert\alpha\rangle+\langle\alpha\vert-\alpha\rangle e^{i\theta}+\langle-\alpha\vert\alpha\rangle e^{-i\theta}+\langle-\alpha\vert-\alpha\rangle)\\
+            \notag=&\abs{N}^2\left[1+\exp(-\abs{\alpha}^2)e^{i\theta}+\exp(-\abs{\alpha}^2)e^{-i\theta}+1\right]\\
+            \notag=&2\abs{N}^2[1+\exp(-\abs{\alpha}^2)\cos\theta]\\
+            =&1,
+        \end{align}
+        \begin{align}
+            \Longrightarrow N=[2+2\exp(-\abs{\alpha}^2)\cos\theta]^{-1/2}.
+        \end{align}
+        \item[(2)] 若 $\theta=\pi$, 则叠加态为
+        \begin{align}
+            \lvert\psi\rangle=N(\lvert\alpha\rangle-\lvert-\alpha\rangle),
+        \end{align}
+        二阶相关度
+        \begin{align}
+            \notag g^{(2)}(0)=&\frac{\langle a^{\dagger}a^{\dagger}aa\rangle}{\langle a^{\dagger}a\rangle^2}=\frac{\langle\psi\rvert a^{\dagger}a^{\dagger}aa\lvert\psi\rangle}{\langle\psi\rvert a^{\dagger}a\lvert\psi\rangle^2}\\
+            \notag=&\frac{\abs{N}^2(\langle\alpha\rvert-\langle-\alpha\rvert)a^{\dagger}a^{\dagger}aa(\lvert\alpha\rangle-\lvert-\alpha\rangle)}{[\abs{N}^2(\langle\alpha\rvert-\langle-\alpha\rvert)a^{\dagger}a(\lvert\alpha\rangle-\lvert-\alpha\rangle)]^2}\\
+            \notag=&\frac{[(\alpha^*)^2\langle\alpha\rvert-(\alpha^*)^2\langle-\alpha\rvert][\alpha^2\lvert\alpha\rangle-\alpha^2\lvert-\alpha\rangle]}{\abs{N}^2\{[\alpha^*\langle\alpha\rvert+\alpha^*\langle-\alpha\rvert][\alpha\lvert\alpha\rangle+\alpha\lvert-\alpha\rangle]\}^2}\\
+            \notag=&\frac{\abs{\alpha}^4(1-\exp(-\abs{\alpha}^2)-\exp(-\abs{\alpha}^2)+1)}{\abs{N}^2\{\abs{\alpha}^2(1+\exp(-\abs{\alpha}^2)+\exp(-\abs{\alpha}^2)+1)\}^2}\\
+            \notag=&\frac{1-\exp(-\abs{\alpha}^2)}{2\abs{N}^2[1+\exp(-\abs{\alpha}^2)]^2}\\
+            =&\frac{[1-\exp(-\abs{\alpha}^2)][1+\exp(-\abs{\alpha}^2)\cos\theta]}{[1+\exp(-\abs{\alpha}^2)]^2}<1,
+        \end{align}
+        故该叠加态为亚泊松分布.
+        \item[(3)] 若 $\theta=0$, 叠加态为
+        \begin{align}
+            \lvert\psi\rangle=N(\lvert\alpha\rangle+\lvert-\alpha\rangle),
+        \end{align}
+        其中
+        \begin{align}
+            N=[2+2\exp(-\abs{\alpha}^2)]^{-1/2}
+        \end{align}
+        $X_1$ 的均值为
+        \begin{align}
+            \notag\langle X_1\rangle=&N^*(\langle\alpha\rvert+\langle-\alpha\rvert)\frac{1}{2}(a+a^{\dagger})N(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\frac{\abs{N}^2}{2}[(\langle\alpha\rvert+\langle-\alpha\rvert)(\alpha\lvert\alpha\rangle-\alpha\lvert-\alpha\rangle)+(\alpha^*\langle\alpha\rvert-\alpha^*\langle-\alpha\rvert)(\lvert\alpha\rangle+\lvert-\alpha\rangle)]\\
+            \notag=&\frac{\abs{N}^2}{2}[\alpha(1-\exp(-\abs{\alpha}^2)+\exp(-\abs{\alpha}^2)-1)+\alpha^*(1+\exp(-\abs{\alpha}^2)-\exp(-\abs{\alpha}^2)-1)]\\
+            =&0.
+        \end{align}
+        $X_1^2$ 的均值为
+        \begin{align}
+            \notag\langle X_1^2\rangle=&N^*(\langle\alpha\rvert+\langle-\alpha\rvert)\left[\frac{1}{2}(a+a^{\dagger})\right]^2N(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\frac{\abs{N}^2}{4}(\langle\alpha\rvert+\langle-\alpha\rvert)(aa+aa^{\dagger}+a^{\dagger}a+a^{\dagger}a^{\dagger})(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\frac{\abs{N}^2}{4}(\langle\alpha\rvert+\langle-\alpha\rvert)(aa+2a^{\dagger}a+1+a^{\dagger}a^{\dagger})(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\frac{\abs{N}^2}{4}[(\langle\alpha\rvert+\langle-\alpha\rvert)(\alpha^2\lvert\alpha\rangle+\alpha^2\lvert-\alpha\rangle)+2(\alpha^*\langle\alpha\rvert-\alpha^*\langle-\alpha\rvert)(\alpha\lvert\alpha\rangle-\alpha\lvert-\alpha\rangle)\\
+            \notag&+(\langle\alpha\rvert+\langle-\alpha\rvert)(\lvert\alpha\rangle+\lvert-\alpha\rangle)+((\alpha^*)^2\langle\alpha\rvert+(\alpha^*)^2\langle-\alpha\rvert)(\lvert\alpha\rangle+\lvert-\alpha\rangle)]\\
+            \notag=&\frac{\abs{N^2}}{4}[\alpha^2(1+\exp(-\abs{\alpha}^2)+\exp(-\abs{\alpha}^2)+1)+2\abs{\alpha}^2(1-\exp(-\abs{\alpha}^2)-\exp(-\abs{\alpha}^2)+1)\\
+            \notag&+(1+\exp(-\abs{\alpha}^2)+\exp(-\abs{\alpha}^2)+1)+(\alpha^*)^2(1+\exp(-\abs{\alpha}^2)+\exp(-\abs{\alpha}^2)+1)]\\
+            \notag=&\frac{\abs{N}^2}{2}[(\alpha^2+(\alpha^*)^2+1)(1+\exp(-\abs{\alpha}^2))+\abs{\alpha}^2(1-\exp(-\abs{\alpha}^2)]\\
+            =&\frac{1}{4}\left[1+\alpha^2+(\alpha^*)^2+\abs{\alpha}^2\frac{1-\exp(-\abs{\alpha}^2)}{1+\exp(-\abs{\alpha}^2)}\right],
+        \end{align}
+        由于 $\alpha$ 为纯虚数, 故
+        \begin{align}
+            \langle X_1^2\rangle=\frac{1}{4}\left[1-\abs{\alpha}^2\frac{1+3\exp(-\abs{\alpha}^2)}{1+\exp(-\abs{\alpha}^2)}\right]\leq\frac{1}{4}.
+        \end{align}
+        $X_1$ 的涨落为
+        \begin{align}
+            \Delta X_1=\sqrt{\langle X_1^2\rangle-\langle X_1\rangle^2}=\sqrt{\langle X_1^2\rangle}<\frac{1}{2},
+        \end{align}
+        故有压缩.
     \end{itemize}
 \end{sol}
 
