@@ -6,7 +6,19 @@
     单模热光场的密度算符为 $\rho=(1-e^{-\beta})\exp(-\beta a^{\dagger}a)$, $\beta=\hbar\omega/kT$. 求其密度算符的 $Q$ 表示.
 \end{prob}
 \begin{sol}
-
+    单模热光场的密度算符可化为
+    \begin{align}
+        \notag\rho=&(1-e^{-\beta})\exp(-\beta a^{\dagger}a)\sum_n\lvert n\rangle\langle n\rvert\\
+        \notag=&(1-e^{-\beta})\sum_n\exp(-n\beta)\lvert n\rangle\langle n\rvert.
+    \end{align}
+    $Q$ 表示为
+    \begin{align}
+        \notag Q(\alpha)=&\frac{1}{\pi}\langle\alpha\rvert\rho\lvert\alpha\rangle=\langle\alpha\rvert(1-e^{-\beta})\sum_n\exp(-n\beta)\lvert n\rangle\langle n\vert\alpha\rangle\\
+        \notag=&\frac{1-e^{-\beta}}{\pi}\sum_n\exp(-n\beta)\abs{\langle n\vert\alpha\rangle}^2\\
+        \notag=&\frac{1-e^{-\beta}}{\pi}\sum_n\exp(-n\beta)\abs{e^{-\abs{\alpha}^2/2}\frac{\alpha^n}{\sqrt{n!}}}^2\\
+        \notag=&\frac{1-e^{-\beta}}{\pi}e^{-\abs{\alpha}^2}\sum_n\exp(-n\beta)\frac{\abs{\alpha}^{2n}}{n!}\\
+        =&\frac{1-e^{-\beta}}{\pi}e^{-\abs{\alpha}^2[1+\exp(-\beta)]}.
+    \end{align}
 \end{sol}
 
 \begin{prob}
