@@ -44,7 +44,14 @@
     某一光场形式为 $\lvert\psi\rangle=\frac{1}{\sqrt{6}}(\lvert 0\rangle+2\lvert 1\rangle+\lvert 2\rangle)$, 判断其是否为亚泊松分布, 为什么?
 \end{prob}
 \begin{sol}
-    
+    该光场的二阶相关度为
+    \begin{align}
+        \notag g^{(2)}(0)=&\frac{\langle a^{\dagger}a^{\dagger}aa\rangle}{\langle a^{\dagger}a\rangle^2}=\frac{\langle\psi\rvert a^{\dagger}a^{\dagger}aa\lvert\psi\rangle}{\langle\psi\rvert a^{\dagger}a\lvert\psi\rangle^2}\\
+        \notag=&6\frac{(\langle 0\rvert+2\langle 1\rvert+\langle 2\rvert)a^{\dagger}a^{\dagger}aa(\lvert 0\rangle+2\lvert 1\rangle+\lvert 2\rangle)}{[(\langle 0\rvert+2\langle 1\rvert+\langle 2\rvert)a^{\dagger}a(\lvert 0\rangle+2\lvert 1\rangle+\lvert 2\rangle)]^2}\\
+        \notag=&6\frac{(\langle 0\rvert+2\langle 1\rvert+\langle 2\rvert)(0\lvert 0\rangle+2\cdot 0\lvert 1\rangle+2\lvert 2\rangle)}{[(\langle 0\rvert+2\langle 1\rvert+\langle 2\rvert)(0\lvert 0\rangle+2\cdot 1\lvert 1\rangle+2\lvert 2\rangle)]^2}\\
+        =&\frac{1}{3}<1,
+    \end{align}
+    故该光场为亚泊松分布.
 \end{sol}
 
 \begin{prob}
