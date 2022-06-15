@@ -124,16 +124,87 @@
     \begin{itemize}
         \item[(1)] 写出半经典理论描述的原子-光场系统哈密顿量.
         \item[(2)] 写出全量子理论描述的原子-光场哈密顿量.
-        \item[(3)] 原子初态为 $\lvert a\rangle$, 光场初态为真空态, 利用全量子理论的描述求 $t$ 时刻的原子布局数反转数 $W(t)=\abs{c_a}^2-\abs{c_b}^2$.
+        \item[(3)] 原子初态为 $\lvert a\rangle$, 光场初态为真空态, 利用全量子理论的描述求 $t$ 时刻的原子布居数反转数 $W(t)=\abs{c_a}^2-\abs{c_b}^2$.
         \item[(4)] (附加题) 若原子初态为 $\frac{1}{\sqrt{2}}(\lvert a\rangle-\lvert b\rangle)$, 光场的初态为真空态, 求 $W(t)$.
     \end{itemize}
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[(1)] 
-        \item[(2)] 
-        \item[(3)] 
-        \item[(4)] 
+        \item[(1)] 半经典理论描述的原子-光场系统哈密顿量为
+        \begin{align}
+            H=\hbar\omega_a\lvert a\rangle\langle a\rvert+\hbar\omega_b\lvert b\rangle\langle b\rvert-(\mu_{ab}\lvert a\rangle\langle b\rvert+\mu_{ba}\lvert b\rangle\langle a\rvert)\mathcal{E}\cos\nu t
+        \end{align}
+        其中电偶极矩算符的对角项
+        \begin{align}
+            \mu_{ab}=\langle a\rvert\mu\lvert b\rangle,\quad\mu_{ba}=\langle b\rvert\mu\lvert a\rangle.
+        \end{align}
+        \item[(2)] 全量子理论描述的原子-光场哈密顿量为
+        \begin{align}
+            H=H_0+H_1.
+        \end{align}
+        其中无微扰哈密顿量
+        \begin{align}
+            H_0=\hbar\nu a^{\dagger}a+\frac{1}{2}\hbar\omega_{ab}\sigma_z,
+        \end{align}
+        相互作用哈密顿量
+        \begin{align}
+            H_1=\hbar g(\sigma_+a+a^{\dagger}\sigma_-).
+        \end{align}
+        \item[(3)] 相互作用表象下, 系统的相互作用哈密顿量为
+        \begin{align}
+            \hat{V}=e^{i\hat{H}_0t/\hbar}H_1e^{-i\hat{H}_0t/\hbar}=\hbar g(\sigma_+ae^{i\Delta t}+a^{\dagger}\sigma_-e^{-i\Delta t}),
+        \end{align}
+        其中频率失谐 $\Delta=\omega_{ab}-\nu$.
+        系统演化遵循相互作用表象下薛定谔方程:
+        \begin{align}
+            i\hbar\frac{\partial}{\partial t}\lvert\psi(t)\rangle=\hat{V}\lvert\psi(t)\rangle,
+        \end{align}
+        代入系统的量子态
+        \begin{align}
+            \lvert\psi(t)\rangle=\sum_{n=0}^{\infty}[C_{a,n}(t)\lvert a,n\rangle+C_{b,n}\lvert b,n\rangle],
+        \end{align}
+        有
+        \begin{align}
+            \dot{C}_{a,n}(t)=&-igC_{b,n+1}\sqrt{n+1}e^{i\Delta t},\\
+            \dot{C}_{b,n+1}(t)=&-igC_{a,n}\sqrt{n+1}e^{-i\Delta t},
+        \end{align}
+        解得
+        \begin{align}
+            C_{a,n}(t)=&\left\{C_{a,n}(0)\left[\cos\left(\frac{\Omega_nt}{2}\right)-\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]-\frac{2ig\sqrt{n+1}}{\Omega_n}C_{b,n+1}(0)\sin\left(\frac{\Omega_nt}{2}\right)\right\}e^{i\Delta t/2},\\
+            C_{b,n+1}(t)=&\left\{C_{b,n+1}(0)\left[\cos\left(\frac{\Omega_nt}{2}\right)+\frac{i\Delta}{\Omega_n}\sin\left(\frac{\Omega_nt}{2}\right)\right]-\frac{2ig\sqrt{n+1}}{\Omega_n}C_{a,n}(0)\sin\left(\frac{\Omega_nt}{2}\right)\right\}e^{-i\Delta t/2},
+        \end{align}
+        其中
+        \begin{align}
+            \Omega_n^2=\Delta^2+4g^2(n+1).
+        \end{align}
+        原子初态为 $\lvert a\rangle$, 即 $C_{a,0}=1$, 将其代入上面两式得
+        \begin{align}
+            C_{a,0}(t)=&\left[\cos\left(\frac{\Omega_0t}{2}\right)-\frac{i\Delta}{\Omega_0}\sin\left(\frac{\Omega_0t}{2}\right)\right]e^{i\Delta t/2},\\
+            C_{b,1}(t)=&-\frac{2ig}{\Omega_0}\sin\left(\frac{\Omega_0t}{2}\right)e^{-i\Delta t/2}.
+        \end{align}
+        $t$ 时刻的原子布居数反转为
+        \begin{align}
+            W(t)=\abs{c_a}^2-\abs{c_b}^2=\abs{C_{a,0}(t)}^2-\abs{C_{b,1}(t)}^2=\cos^2\left(\frac{\Omega_0t}{2}\right)+\frac{\Delta^2-4g^2}{\Omega_0^2}\sin^2\left(\frac{\Omega_0t}{2}\right).
+        \end{align}
+        由于 $\nu=\omega_{ab}$, 故 $\Delta=0$, $\Omega_0^2=4g^2$,
+        \begin{align}
+            W(t)=\cos^2(gt)-\sin^2(gt)=\cos(2gt).
+        \end{align}
+        \item[(4)] 若原子初态为 $\frac{1}{\sqrt{2}}(\lvert a\rangle-\lvert b\rangle)$, 光场的初态为真空态, 则 $C_{a,0}(0)=\frac{1}{\sqrt{2}}$, $C_{b,0}=\frac{1}{\sqrt{2}}$,
+        \begin{align}
+            C_{a,0}(t)=&\frac{1}{\sqrt{2}}\left[\cos\left(\frac{\Omega_0t}{2}\right)-\frac{i\Delta}{\Omega_0}\sin\left(\frac{\Omega_0t}{2}\right)\right]e^{i\Delta t/2},\\
+            C_{b,1}(t)=&-\frac{\sqrt{2}ig}{\Omega_0}\sin\left(\frac{\Omega_0t}{2}\right)e^{-i\Delta t/2},\\
+            C_{b,0}(t)=&\frac{1}{\sqrt{2}}.
+        \end{align}
+        $t$ 时刻的原子布居数反转为
+        \begin{align}
+            \notag W(t)=&\abs{c_a(t)}^2-\abs{c_b(t)}^2=\abs{C_{a,0}(t)}^2-\abs{C_{b,1}}^2-\abs{C_{b,0}(t)}^2\\
+            =&\frac{1}{2}\cos^2\left(\frac{\Omega_0t}{2}\right)+\frac{\Delta^2-4g^2}{2\Omega_0^2}\sin^2\left(\frac{\Omega_0t}{2}\right)-\frac{1}{2}.
+        \end{align}
+        由于 $\nu=\omega_{ab}$, 故 $\Delta=0$, $\Omega_n^2=4g^2(n+1)$,
+        \begin{align}
+            W(t)=\frac{1}{2}\cos^2(gt)-\frac{1}{2}\sin^2(gt)-\frac{1}{2}=\frac{\cos(2gt)-1}{2}.
+        \end{align}
     \end{itemize}
 \end{sol}
 
