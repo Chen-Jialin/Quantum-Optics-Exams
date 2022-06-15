@@ -235,12 +235,26 @@
 \begin{prob}
     单模光场与热平衡辐射场热库相互作用的 Langevin 方程为
     \[
-        \tilde{a}(t)=-\frac{\gamma}{2}\tilde{a}(t)+F_a(t),
+        \dot{\tilde{a}}(t)=-\frac{\gamma}{2}\tilde{a}(t)+F_{\tilde{a}}(t),
     \]
-    且已知: $\langle F_{\tilde{a}}^{\dagger}(t)\tilde{a}(t)\rangle_R+\langle\tilde{a}^{\dagger}(t)F_{\tilde{a}}(t)\rangle=\gamma\bar{n}$. 试求 $\langle\tilde{a}^{\dagger}(t)\tilde{a}(t)\rangle_R$.
+    且已知: $\langle F_{\tilde{a}}^{\dagger}(t)\tilde{a}(t)\rangle_R+\langle\tilde{a}^{\dagger}(t)F_{\tilde{a}}(t)\rangle_R=\gamma\bar{n}$. 试求 $\langle\tilde{a}^{\dagger}(t)\tilde{a}(t)\rangle_R$.
 \end{prob}
 \begin{sol}
-    
+    Langevin 方程的共轭为
+    \begin{align}
+        \dot{\tilde{a}}^{\dagger}(t)=-\frac{\gamma^*}{2}\tilde{a}^{\dagger}(t)+F_{\tilde{a}}^{\dagger}(t).
+    \end{align}
+    $\langle\tilde{a}^{\dagger}(t)\tilde{a}(t)\rangle$ 遵循演化方程:
+    \begin{align}
+        \notag\frac{\mathrm{d}\langle\tilde{a}^{\dagger}(t)\tilde{a}(t)\rangle_R}{\mathrm{d}t}=&\left\langle\frac{\mathrm{d}\tilde{a}^{\dagger}(t)\tilde{a}(t)}{\mathrm{d}t}\right\rangle_R=\left\langle\frac{\mathrm{d}\tilde{a}^{\dagger}(t)}{\mathrm{d}t}\tilde{a}(t)+\tilde{a}^{\dagger}(t)\frac{\mathrm{d}\tilde{a}(t)}{\mathrm{d}t}\right\rangle_R\\
+        \notag=&\left\langle\left[-\frac{\gamma^*}{2}\tilde{a}^{\dagger}(t)+F_{\tilde{a}}^{\dagger}(t)\right]\tilde{a}(t)+\tilde{a}^{\dagger}(t)\left[-\frac{\gamma}{2}\tilde{a}(t)+F_{\tilde{a}}(t)\right]\right\rangle_R\\
+        \notag=&-\frac{\gamma^*+\gamma}{2}\langle\tilde{a}^{\dagger}(t)\tilde{a}(t)\rangle_R+\langle F_{\tilde{a}}^{\dagger}(t)\tilde{a}(t)\rangle_R+\langle\tilde{a}^{\dagger}(t)F_{\tilde{a}}(t)\rangle_R\\
+        =&-\frac{\gamma^*+\gamma}{2}\langle\tilde{a}^{\dagger}(t)\tilde{a}(t)\rangle_R+\gamma\bar{n},
+    \end{align}
+    解得
+    \begin{align}
+        \langle\tilde{a}^{\dagger}(t)\tilde{a}(t)\rangle_R=\left[\langle\tilde{a}^{\dagger}(0)\tilde{a}(0)\rangle-\frac{2\gamma}{\gamma^*+\gamma}\right]e^{-\frac{\gamma^*+\gamma}{2}t}+\frac{2\gamma}{\gamma^*+\gamma}\bar{n}.
+    \end{align}
 \end{sol}
 
 \begin{prob}[附加题]
