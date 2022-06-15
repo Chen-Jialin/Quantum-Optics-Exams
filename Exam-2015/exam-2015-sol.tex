@@ -6,7 +6,14 @@
     某一光场的密度算符 $\rho=\sum_n\frac{\langle n\rangle^n}{(1+\langle n\rangle)^{n+1}}\lvert n\rangle\langle n\rvert$, 求其密度算符的 Q 表示.
 \end{prob}
 \begin{sol}
-    
+    该光场的 Q 表示为
+    \begin{align}
+        \notag Q(\alpha)=&\frac{1}{\pi}\langle\alpha\rvert\rho\lvert\alpha\rangle=\frac{1}{\pi}\langle\alpha\rvert\sum_n\frac{\langle n\rangle}{(1+\langle n\rangle)^{n+1}}\lvert n\rangle\langle n\vert\alpha\rangle\\
+        \notag=&\frac{1}{\pi}\sum_n\frac{\langle n\rangle}{(1+\langle n\rangle)^{n+1}}\abs{\langle n\vert\alpha\rangle}^2\\
+        \notag=&\frac{1}{\pi}\sum_n\frac{\langle n\rangle}{(1+\langle n\rangle)^{n+1}}\abs{e^{-\abs{\alpha}^2/2}\frac{\alpha^n}{\sqrt{n!}}}^2\\
+        \notag=&\frac{1}{\pi}\sum_n\frac{\langle n\rangle}{(1+\langle n\rangle)^{n+1}}e^{-\abs{\alpha}^2}\frac{\abs{\alpha}^{2n}}{n!}\\
+        =&\frac{1}{\pi}\frac{\langle n\rangle}{1+\langle n\rangle}\exp\left[-\frac{\langle n\rangle}{1+\langle n\rangle}\abs{\alpha}^2\right].
+    \end{align}
 \end{sol}
 
 \begin{prob}
