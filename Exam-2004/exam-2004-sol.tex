@@ -211,13 +211,13 @@
 \begin{prob}
     单模光场与热平衡辐射场热库相互作用, 其密度算符的运动方程为:
     \[
-        \rho=-\frac{\gamma}{2}\bar{n}(aa^{\dagger}\rho-2a^{\dagger}\rho a+\rho aa^{\dagger})-\frac{\gamma}{2}(\bar{n}+1)(a^{\dagger}a\rho-2a\rho a^{\dagger}+\rho a^{\dagger}a).
+        \dot{\rho}=-\frac{\gamma}{2}\bar{n}(aa^{\dagger}\rho-2a^{\dagger}\rho a+\rho aa^{\dagger})-\frac{\gamma}{2}(\bar{n}+1)(a^{\dagger}a\rho-2a\rho a^{\dagger}+\rho a^{\dagger}a).
     \]
-    求 $t$ 时刻光场的粒子数平均值 $\langle a^{\dagger}(t)a(t)\rangle$. [提示: $\frac{\mathrm{d}\langle a^{\dagger}a\rangle}{\mathrm{d}t}=\tr(\rho a^{\dagger}a)$]
+    求 $t$ 时刻光场的粒子数平均值 $\langle a^{\dagger}(t)a(t)\rangle$. [提示: $\frac{\mathrm{d}\langle a^{\dagger}a\rangle}{\mathrm{d}t}=\tr(\dot{\rho}a^{\dagger}a)$]
 \end{prob}
 \begin{sol}
     \begin{align}
-        \notag&\frac{\mathrm{d}\langle a^{\dagger}a\rangle}{\mathrm{d}t}=\tr(\rho a^{\dagger}a)=\tr(\dot{\rho}a^{\dagger}a)\\
+        \notag&\frac{\mathrm{d}\langle a^{\dagger}a\rangle}{\mathrm{d}t}=\tr(\dot{\rho}a^{\dagger}a)\\
         \notag=&\tr\left\{\left[-\frac{\gamma}{2}\bar{n}(aa^{\dagger}\rho-2a^{\dagger}\rho a+\rho aa^{\dagger})-\frac{\gamma}{2}(\bar{n}+1)(a^{\dagger}a\rho-2a\rho a^{\dagger}+\rho a^{\dagger}a)\right]a^{\dagger}a\right\}\\
         \notag=&\tr\left\{-\frac{\gamma}{2}\bar{n}(aa^{\dagger}\rho a^{\dagger}a-2a^{\dagger}\rho aa^{\dagger}a+\rho aa^{\dagger}a^{\dagger}a)-\frac{\gamma}{2}(\bar{n}+1)(a^{\dagger}a\rho a^{\dagger}a-2a\rho a^{\dagger}a^{\dagger}a+\rho a^{\dagger}aa^{\dagger}a)\right\}\\
         \notag=&\tr\left\{\rho\left[-\frac{\gamma}{2}\bar{n}(a^{\dagger}aaa^{\dagger}-2aa^{\dagger}aa^{\dagger}+aa^{\dagger}a^{\dagger}a)-\frac{\gamma}{2}(\bar{n}+1)(a^{\dagger}aa^{\dagger}a-2a^{\dagger}a^{\dagger}aa+a^{\dagger}aa^{\dagger}a)\right]\right\}\\
