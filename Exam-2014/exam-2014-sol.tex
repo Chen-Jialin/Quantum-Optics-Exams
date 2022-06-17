@@ -145,7 +145,7 @@
 \end{sol}
 
 \begin{prob}
-    考虑一个理想的光学腔, 腔里有单模辐射场 $\lvert\phi(0)\rangle_F=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)$. 处于基态与单模场共振的二能级原子 $\lvert\varphi(0)\rangle_A=\lvert g\rangle$ 进入该光学腔, 与场发生作用, 相互作用的哈密顿量为 $H_I=\hbar g(\sigma_+a^{\dagger}+\sigma_-(a^{\dagger})^2)$ (在相互作用绘景中研究). 系统的演化方程为 $\lvert\Psi\rangle_{AF}=e^{-i\frac{i}{\hbar}H_It}\lvert\phi(0)\rangle_R\lvert\varphi(0)\rangle_A$. 作用一段时间后原子从腔中逸出. 经探测: 出射原子处于激发态 $\lvert e\rangle$.
+    考虑一个理想的光学腔, 腔里有单模辐射场 $\lvert\phi(0)\rangle_F=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 10\rangle)$. 处于基态与单模场共振的二能级原子 $\lvert\varphi(0)\rangle_A=\lvert g\rangle$ 进入该光学腔, 与场发生作用, 相互作用的哈密顿量为 $H_I=\hbar g(\sigma_+a^2+\sigma_-(a^{\dagger})^2)$ (在相互作用绘景中研究). 系统的演化方程为 $\lvert\Psi\rangle_{AF}=e^{-\frac{i}{\hbar}H_It}\lvert\phi(0)\rangle_R\lvert\varphi(0)\rangle_A$. 作用一段时间后原子从腔中逸出. 经探测: 出射原子处于激发态 $\lvert e\rangle$.
     \begin{itemize}
         \item[(1)] 计算该单模场初始时刻 $\lvert\phi(0)\rangle_F$ 的平均光子数 $\bar{n}$;
         \item[(2)] 任意时刻系统的态 $\lvert\Psi(t)\rangle_{AF}$;
@@ -154,9 +154,42 @@
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[(1)] 
-        \item[(2)] 
-        \item[(3)] 
+        \item[(1)] 该单模场初始时刻的平均光子数为
+        \begin{align}
+            \bar{n}=_F\langle\phi(0)\rvert a^{\dagger}a\lvert\phi(0)\rangle_F=5.
+        \end{align}
+        \item[(2)] 设任意时刻系统的态为
+        \begin{align}
+            \lvert\Psi(t)\rangle_{AF}=\sum_{n=0}^{\infty}[C_{e,n}(t)\lvert a,n\rangle+C_{g,n}(t)\lvert b,n\rangle].
+        \end{align}
+        将其代入薛定谔方程中得
+        \begin{align}
+            i\hbar\frac{\partial}{\partial t}\lvert\Psi(t)\rangle_{AF}=H_I\lvert\Psi(t)\rangle
+        \end{align}
+        有
+        \begin{align}
+            \dot{C}_{e,n}(t)=&-igC_{g,n+2}\sqrt{(n+1)(n+2)},\\
+            \dot{C}_{g,n+2}(t)=&-igC_{e,n}\sqrt{(n+1)(n+2)},
+        \end{align}
+        解得
+        \begin{align}
+            C_{e,n}(t)=&C_{e,n}(0)\cos\left(\frac{\Omega_nt}{2}\right)-iC_{g,n+2}(0)\sin\left(\frac{\Omega_nt}{2}\right),\\
+            C_{g,n+2}(t)=&C_{g,n+2}(0)\cos\left(\frac{\Omega_nt}{2}\right)-iC_{e,n}(0)\sin\left(\frac{\Omega_nt}{2}\right).
+        \end{align}
+        系统的初始状态为
+        \begin{align}
+            \lvert\Psi(0)\rangle_{AF}=\lvert\varphi(0)\rangle_A\otimes\lvert\phi(0)\rangle_F=\frac{1}{\sqrt{2}}\lvert g\rangle(\lvert 0\rangle-i\lvert 10\rangle),
+        \end{align}
+        即 $C_{g,0}=\frac{1}{\sqrt{2}}$, $C_{g,10}=-\frac{i}{\sqrt{2}}$, 故
+        \begin{align}
+            C_{e,8}=&-\frac{1}{\sqrt{2}}\sin\left(\frac{\Omega_nt}{2}\right),\\
+            C_{g,10}=&-\frac{i}{\sqrt{2}}\cos\left(\frac{\Omega_nt}{2}\right),
+        \end{align}
+        即 $t$ 时刻系统的态为
+        \begin{align}
+            \lvert\Psi(t)\rangle_{AF}=-\frac{1}{\sqrt{2}}\sin\left(\frac{\Omega_nt}{2}\right)\lvert e,8\rangle-\frac{i}{\sqrt{2}}\cos\left(\frac{\Omega_nt}{2}\right)+\frac{1}{\sqrt{2}}.
+        \end{align}
+        \item[(3)] 由于探测得出射原子处于激发态 $\lvert e\rangle$, 故系统的态塌缩至 $\lvert 8\rangle$, 此时腔内的辐射场的平均光子数为 $8$.
     \end{itemize}
 \end{sol}
 
@@ -164,7 +197,30 @@
     由一个赝自旋算符 $S_+=\lvert e\rangle\langle g\rvert$, $S_-=\lvert g\rangle\langle e\rvert$ 和 $S_3=(\lvert e\rangle\langle e\rvert-\lvert g\rangle\langle g\rvert)/2$ 描述的二能级原子, 可定义两个厄米算符: $S_1=(S_++S_-)/2$, $S_2=(S_+-S_-)/(2i)$, 他们的对易关系 $[S_1,S_2]=iS_3$, $S_3=1/2\sigma_z$. 相应的海森堡不确定关系为 $(\Delta S_1)^2(\Delta S_2)^2\geq 1/4\abs{\langle S_3\rangle}^2$, 这里 $(\Delta S_i)^2=\langle S_i^2\rangle-\langle S_i\rangle^2$ 是原子算符 $S_i$ 的量子涨落. 如果量子涨落满足 $(\Delta S_i)^2<1/2\abs{\langle S_3\rangle}$ ($i=1$ 或 $2$), 我们说原子算符的涨落被压缩, 原子出现压缩效应. 当原子处于 $\lvert\Psi\rangle=\cos(\frac{\theta}{2})\lvert e\rangle+\sin(\frac{\theta}{2})\lvert g\rangle$ 时 $S_1$ 的平均值 $\langle S_1\rangle$, 求出分量 $S_1$ 压缩的条件.
 \end{prob}
 \begin{sol}
-    
+    \begin{align}
+        S_1=\frac{1}{2}(S_++S_-)=\frac{1}{2}(\lvert e\rangle\langle g\rvert+\lvert g\rangle\langle e\rvert).
+    \end{align}
+    $S_1$ 的平均值为
+    \begin{align}
+        \langle S_1\rangle=&\langle\Psi\rvert\frac{1}{2}(\lvert e\rangle\langle g\rvert+\lvert g\rangle\langle e\rvert)\lvert\Psi\rangle=\sin\frac{\theta}{2}\cos\frac{\theta}{2}=\frac{1}{2}\sin\theta.
+    \end{align}
+    $S_1^2$ 的平均值为
+    \begin{align}
+        \langle S_1^2\rangle=&\langle\Psi\rvert S_1^2\lvert\Psi\rangle=\frac{1}{4}\langle\Psi\rvert(\lvert e\rangle\langle e\rvert+\lvert g\rangle\langle g\rvert)\lvert\Psi\rangle=\frac{1}{4}.
+    \end{align}
+    $S_1$ 的涨落为
+    \begin{align}
+        \Delta S_1=\sqrt{\langle S_1^2\rangle-\langle S_1\rangle^2}=\frac{1}{2}\sqrt{1-\sin^2\theta}.
+    \end{align}
+
+    \begin{align}
+        \langle S_3\rangle=\langle\Psi\rvert S_3\lvert\Psi\rangle=\frac{1}{2}\left(\cos^2\frac{\theta}{2}-\sin^2\frac{\theta}{2}\right)=\frac{1}{2}\cos\theta.
+    \end{align}
+    分量 $S_1$ 压缩的条件为
+    \begin{gather}
+        (\Delta S_1)^2=\frac{1}{4}(1-\sin^2\theta)<\frac{1}{2}\abs{\langle S_3\rangle}=\frac{1}{4}\abs{\cos\theta},\\
+        \Longrightarrow\theta\neq n\pi,\quad n=1,2,\cdots.
+    \end{gather}
 \end{sol}
 
 \begin{prob}
