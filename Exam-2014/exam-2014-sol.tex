@@ -3,7 +3,7 @@
 
 \begin{document}
 \begin{prob}
-    V 型三能级原子与两个经典光场作用. 频率为 $\omega_1$ 的经典光场与能级 $\lvert a\rangle$, $\lvert b\rangle$ 耦合, 频率为 $\omega_2$ 的经典光场与能级 $\lvert a\rangle$, $\lvert c\rangle$ 耦合. 系统的哈密顿量为 $H=H_0+H_1$, $H_0=\hbar\omega_0\lvert a\rangle\langle a\rvert+\hbar\omega_b\lvert b\rangle\langle b\rvert+\hbar\omega_c\lvert c\rangle\langle c\rvert$,
+    V 型三能级原子与两个经典光场作用. 频率为 $\omega_1$ 的经典光场与能级 $\lvert a\rangle$, $\lvert b\rangle$ 耦合, 频率为 $\omega_2$ 的经典光场与能级 $\lvert a\rangle$, $\lvert c\rangle$ 耦合. 系统的哈密顿量为 $H=H_0+H_1$, $H_0=\hbar\omega_a\lvert a\rangle\langle a\rvert+\hbar\omega_b\lvert b\rangle\langle b\rvert+\hbar\omega_c\lvert c\rangle\langle c\rvert$,
     \[
         H_1=\frac{\hbar}{2}(\Omega_{R1}e^{-i\phi_1}e^{-i\omega_1t}\lvert a\rangle\langle b\rvert+\Omega_{R2}e^{-i\phi_2}e^{-i\omega_2t}\lvert a\rangle\langle c\rvert)+\text{H.c.}
     \]
@@ -15,7 +15,91 @@
     \end{itemize}
 \end{prob}
 \begin{sol}
-    
+    \begin{itemize}
+        \item[(1)] 在基 $\{\lvert a\rangle,\lvert b\rangle,\lvert c\rangle\}$ 下, 系统哈密顿量的矩阵形式为
+        \begin{align}
+            H=\begin{bmatrix}
+                \hbar\omega_a&\frac{\hbar}{2}\Omega_{R1}e^{-i\phi_1}e^{-i\omega_1t}&\frac{\hbar}{2}\Omega_{R2}e^{-i\phi_2}e^{-i\omega_2t}\\
+                \frac{\hbar}{2}\Omega_{R1}e^{i\phi_1}e^{i\omega_1t}&\hbar\omega_b&0\\
+                \frac{\hbar}{2}\Omega_{R2}e^{i\phi_2}e^{i\omega_2t}&0&\hbar\omega_c
+            \end{bmatrix}.
+        \end{align}
+        波函数的矢量形式为
+        \begin{align}
+            \lvert\Psi\rangle=\begin{bmatrix}
+                c_a(t)e^{-i\omega_at}\\
+                c_b(t)e^{-i\omega_bt}\\
+                c_c(t)e^{-i\omega_ct}
+            \end{bmatrix}.
+        \end{align}
+        薛定谔方程
+        \begin{align}
+            i\hbar\frac{\partial}{\partial t}\lvert\Psi\rangle=H\lvert\Psi\rangle
+        \end{align}
+        的矩阵形式可表为
+        {\small
+        \begin{gather}
+            i\hbar\frac{\partial}{\partial t}\begin{bmatrix}
+                c_a(t)e^{-i\omega_at}\\
+                c_b(t)e^{-i\omega_bt}\\
+                c_c(t)e^{-i\omega_ct}
+            \end{bmatrix}=\begin{bmatrix}
+                \hbar\omega_a&\frac{\hbar}{2}\Omega_{R1}e^{-i\phi_1}e^{-i\omega_1t}&\frac{\hbar}{2}\Omega_{R2}e^{-i\phi_2}e^{-i\omega_2t}\\
+                \frac{\hbar}{2}\Omega_{R1}e^{i\phi_1}e^{i\omega_1t}&\hbar\omega_b&0\\
+                \frac{\hbar}{2}\Omega_{R2}e^{i\phi_2}e^{i\omega_2t}&0&\hbar\omega_c
+            \end{bmatrix}\begin{bmatrix}
+                c_a(t)e^{-i\omega_at}\\
+                c_b(t)e^{-i\omega_bt}\\
+                c_c(t)e^{-i\omega_ct}
+            \end{bmatrix},\\
+            \Longrightarrow i\hbar\begin{bmatrix}
+                \dot{c}_a(t)e^{-i\omega_at}-i\omega_ac_a(t)e^{-i\omega_at}\\
+                \dot{c}_b(t)e^{-i\omega_bt}-i\omega_bc_b(t)e^{-i\omega_bt}\\
+                \dot{c}_c(t)e^{-i\omega_ct}-i\omega_cc_c(t)e^{-i\omega_ct}
+            \end{bmatrix}=\begin{bmatrix}
+                \hbar\omega_ae^{-i\omega_at}+\frac{\hbar}{2}\Omega_{R1}e^{-i\phi_1}e^{-i\omega_1t}c_b(t)e^{-i\omega_bt}+\frac{\hbar}{2}\Omega_{R2}e^{-i\phi_2}e^{-i\omega_2t}c_c(t)e^{-i\omega_ct}\\
+                \frac{\hbar}{2}\Omega_{R1}e^{i\phi_1}e^{i\omega_1t}c_a(t)e^{-i\omega_at}+\hbar\omega_bc_b(t)e^{-i\omega_bt}\\
+                \frac{\hbar}{2}\Omega_{R2}e^{i\phi_2}e^{i\omega_2t}c_a(t)e^{-i\omega_at}+\hbar\omega_cc_c(t)e^{-i\omega_ct}
+            \end{bmatrix},\\
+            \Longrightarrow\begin{bmatrix}
+                \dot{c}_a(t)\\
+                \dot{c}_b(t)\\
+                \dot{c}_c(t)
+            \end{bmatrix}=\begin{bmatrix}
+                -i\frac{\Omega_{R1}}{2}e^{-i\phi_1}c_b(t)-i\frac{\Omega_{R2}}{2}e^{-i\phi_2}c_c(t)\\
+                -i\frac{\Omega_{R1}}{2}e^{i\phi_1}c_a(t)\\
+                -i\frac{\Omega_{R2}}{2}e^{i\phi_2}c_a(t)
+            \end{bmatrix}
+        \end{gather}
+        }
+        即 $c_a(t)$, $c_b(t)$, $c_c(t)$ 满足微分方程:
+        \begin{align}
+            \dot{c}_a(t)=&-i\frac{\Omega_{R1}}{2}e^{-i\phi_1}c_b(t)-i\frac{\Omega_{R2}}{2}e^{-i\phi_2}c_c(t),\\
+            \dot{c}_b(t)=&-i\frac{\Omega_{R1}}{2}e^{i\phi_1}c_a(t),\\
+            \dot{c}_c(t)=&-i\frac{\Omega_{R2}}{2}e^{i\phi_2}c_a(t).
+        \end{align}
+        \item[(2)] 解上述微分方程组得
+        {\footnotesize
+        \begin{align}
+            c_a(t)=&c_a(0)\cos\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right)-i\frac{\Omega_{R1}e^{-i\phi_1}c_b(0)+\Omega_{R2}e^{-i\phi_2}c_c(0)}{\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}}\sin\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right),\\
+            c_b(t)=&-i\frac{\Omega_{R1}}{2\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}}\left\{c_a(0)\sin\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right)+i\frac{\Omega_{R1}e^{-i\phi_1}c_b(0)+\Omega_{R2}e^{-i\phi_2}c_c(0)}{\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}}\left[\cos\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right)-1\right]\right\}+c_b(0),\\
+            c_c(t)=&-i\frac{\Omega_{R2}}{2\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}}\left\{c_a(0)\sin\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right)+i\frac{\Omega_{R1}e^{-i\phi_1}c_b(0)+\Omega_{R2}e^{-i\phi_2}c_c(0)}{\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}}\left[\cos\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right)-1\right]\right\}+c_c(0).
+        \end{align}
+        }
+        原子的初态为 $\lvert\Psi(0)\rangle=\cos\frac{\theta}{2}\lvert b\rangle+\sin\frac{\theta}{2}\lvert c\rangle$, 即 $c_a(0)=0$, $c_b(0)=\cos\frac{\theta}{2}$, $c_c(0)=\sin\frac{\theta}{2}$, 故
+        \begin{align}
+            c_a(t)=&-i\frac{\Omega_{R1}e^{-i\phi_1}\cos\frac{\theta}{2}+\Omega_{R2}e^{-i\phi_2}\sin\frac{\theta}{2}}{\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}}\sin\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right),\\
+            c_b(t)=&\frac{\Omega_{R1}^2e^{-i\phi_1}\cos\frac{\theta}{2}+\Omega_{R1}\Omega_{R2}e^{-i\phi_2}\sin\frac{\theta}{2}}{2(\Omega_{R1}^2+\Omega_{R2}^2)}\left[\cos\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right)-1\right]+\cos\frac{\theta}{2},\\
+            c_c(t)=&\frac{\Omega_{R1}\Omega_{R2}e^{-i\phi_1}\cos\frac{\theta}{2}+\Omega_{R2}^2e^{-i\phi_2}\sin\frac{\theta}{2}}{2(\Omega_{R1}^2+\Omega_{R2}^2)}\left[\cos\left(\sqrt{\Omega_{R1}^2+\Omega_{R2}^2}t\right)-1\right]+\sin\frac{\theta}{2}.
+        \end{align}
+        \item[(3)] 当
+        \begin{gather}
+            c_a(t)=0,\\
+            \Longrightarrow\Omega_{R1}e^{-i\phi_1}\cos\frac{\theta}{2}+\Omega_{R2}e^{-i\phi_2}\sin\frac{\theta}{2}=0,\\
+            \Longrightarrow\theta=-2\arctan\left[\frac{\Omega_{R1}}{\Omega_{R2}}e^{-i(\phi_1-\phi_2)}\right]
+        \end{gather}
+        时, 发生相干囚禁, 其物理图像为光场激发下, 由 $\lvert b\rangle$ 向 $\lvert a\rangle$ 跃迁和由 $\lvert c\rangle$ 向 $\lvert a\rangle$ 跃迁产生的 $\lvert a\rangle$ 的概率幅变化抵消.
+    \end{itemize}
 \end{sol}
 
 \begin{prob}
