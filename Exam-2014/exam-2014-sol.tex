@@ -1,0 +1,137 @@
+\documentclass{assignment}
+\ProjectInfos{量子光学}{PHYS6251P}{2015 年}{期末考试}{}{陈稼霖}[https://github.com/Chen-Jialin]{SA21038052}
+
+\begin{document}
+\begin{prob}
+    V 型三能级原子与两个经典光场作用. 频率为 $\omega_1$ 的经典光场与能级 $\lvert a\rangle$, $\lvert b\rangle$ 耦合, 频率为 $\omega_2$ 的经典光场与能级 $\lvert a\rangle$, $\lvert c\rangle$ 耦合. 系统的哈密顿量为 $H=H_0+H_1$, $H_0=\hbar\omega_0\lvert a\rangle\langle a\rvert+\hbar\omega_b\lvert b\rangle\langle b\rvert+\hbar\omega_c\lvert c\rangle\langle c\rvert$,
+    \[
+        H_1=\frac{\hbar}{2}(\Omega_{R1}e^{-i\phi_1}e^{-i\omega_1t}\lvert a\rangle\langle b\rvert+\Omega_{R2}e^{-i\phi_2}e^{-i\omega_2t}\lvert a\rangle\langle c\rvert)+\text{H.c.}
+    \]
+    $\Omega_{R1}e^{-i\phi_1}$ 和 $\Omega_{R2}e^{-i\phi_2}$ 是复拉比频率. 原子的波函数可以写为 $\lvert\Psi\rangle=c_a(t)e^{-i\omega_at}\lvert a\rangle+c_be^{-i\omega_bt}\lvert b\rangle+c_c(t)e^{-i\omega_ct}\lvert c\rangle$. 原子和光场共振, 即: $\omega_a-\omega_b=\omega_1$, $\omega_a-\omega_c=\omega_2$, 通过解薛定谔方程, 可以求得波函数.
+    \begin{itemize}
+        \item[(1)] 求 $c_a(t)$, $c_b(t)$, $c_c(t)$ 所满足的微分方程;
+        \item[(2)] 假设原子的初态为 $\lvert\Psi(0)\rangle=\cos\frac{\theta}{2}\lvert b\rangle+\sin\frac{\theta}{2}\lvert c\rangle$, 求出 $c_a(t)$, $c_b(t)$, $c_c(t)$;
+        \item[(3)] 当 $\Omega_{R1}$, $\Omega_{R2}$, $\theta$, $\phi_1$, $\phi_2$ 满足什么条件时, 原子在演化过程中始终处于两个能级态 $\lvert b\rangle$, $\lvert c\rangle$ 的叠加态, 而不被激发到激发态上去. 这种现象叫做相干囚禁 (coherent trapping), 从物理上解释这种现象. (见 M. O. Scully, M. S. Zubairy 的书 《quantum optics》 223-224 页, 世界图书出版公司出版, 中国, 北京)
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    增加了一个光子的相干态 (Single-photon-added coherent state (SPACS)), $\lvert\alpha,1\rangle=\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle$, 考虑该辐射场的两个厄米算符 $X_1=\frac{1}{2}(a+a^{\dagger})$, $X_2=\frac{1}{2i}(a-a^{\dagger})$, 它们分别对应于场的复振幅的实部和虚部, 满足对易关系 $[X_1,X_2]=\frac{i}{2}$. 当 $\alpha$ 取何值时 (本体 $\alpha$ 取正实数) SPACS 态是压缩态. (提示: 压缩条件 $(\Delta X_1)^2<1/4$ 或 $(\Delta X_2)^2<1/4$).
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    考虑一个理想的光学腔, 腔里有单模辐射场 $\lvert\phi(0)\rangle_F=\frac{1}{\sqrt{2}}(\lvert 0\rangle-i\lvert 1\rangle)$. 处于基态与单模场共振的二能级原子 $\lvert\varphi(0)\rangle_A=\lvert g\rangle$ 进入该光学腔, 与场发生作用, 相互作用的哈密顿量为 $H_I=\hbar g(\sigma_+a^{\dagger}+\sigma_-(a^{\dagger})^2)$ (在相互作用绘景中研究). 系统的演化方程为 $\lvert\Psi\rangle_{AF}=e^{-i\frac{i}{\hbar}H_It}\lvert\phi(0)\rangle_R\lvert\varphi(0)\rangle_A$. 作用一段时间后原子从腔中逸出. 经探测: 出射原子处于激发态 $\lvert e\rangle$.
+    \begin{itemize}
+        \item[(1)] 计算该单模场初始时刻 $\lvert\phi(0)\rangle_F$ 的平均光子数 $\bar{n}$;
+        \item[(2)] 任意时刻系统的态 $\lvert\Psi(t)\rangle_{AF}$;
+        \item[(3)] 原子出射后, 腔内的辐射场的平均光子数变为多少?
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    \begin{itemize}
+        \item[(1)] 
+        \item[(2)] 
+        \item[(3)] 
+    \end{itemize}
+\end{sol}
+
+\begin{prob}
+    由一个赝自旋算符 $S_+=\lvert e\rangle\langle g\rvert$, $S_-=\lvert g\rangle\langle e\rvert$ 和 $S_3=(\lvert e\rangle\langle e\rvert-\lvert g\rangle\langle g\rvert)/2$ 描述的二能级原子, 可定义两个厄米算符: $S_1=(S_++S_-)/2$, $S_2=(S_+-S_-)/(2i)$, 他们的对易关系 $[S_1,S_2]=iS_3$, $S_3=1/2\sigma_z$. 相应的海森堡不确定关系为 $(\Delta S_1)^2(\Delta S_2)^2\geq 1/4\abs{\langle S_3\rangle}^2$, 这里 $(\Delta S_i)^2=\langle S_i^2\rangle-\langle S_i\rangle^2$ 是原子算符 $S_i$ 的量子涨落. 如果量子涨落满足 $(\Delta S_i)^2<1/2\abs{\langle S_3\rangle}$ ($i=1$ 或 $2$), 我们说原子算符的涨落被压缩, 原子出现压缩效应. 当原子处于 $\lvert\Psi\rangle=\cos(\frac{\theta}{2})\lvert e\rangle+\sin(\frac{\theta}{2})\lvert g\rangle$ 时 $S_1$ 的平均值 $\langle S_1\rangle$, 求出分量 $S_1$ 压缩的条件.
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    设原子初态 $\lvert\varphi(0)\rangle_A=\cos\alpha\lvert e\rangle+\sin\alpha\lvert g\rangle$, 光场初态是粒子数态 $\lvert\varphi(0)\rangle_F=\lvert 6\rangle$. 该原子与光场之间的相互作用可用双光子 J-C 模型描述, 在共振条件和相互作用绘景中其哈密顿量表示为 $H_1=\hbar g(\sigma_+a^2+\sigma_-(a^{\dagger})^2)$, 求任意时刻 $t$,
+    \begin{itemize}
+        \item[(1)] 该复合系统态矢.
+        \item[(2)] 原子处于激发态的概率, 画出概率图形 ($\alpha=\pi/4$, 横坐标表示时间, 纵坐标表示概率). (要求给出程序)
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    \begin{itemize}
+        \item[(1)] 
+        \item[(2)] 
+    \end{itemize}
+\end{sol}
+
+\begin{prob}
+    一个二能级原子 A 与热库 E (环境) 相互作用如下: $U_{AE}\lvert g\rangle_A\lvert 0\rangle_E=\lvert e\rangle_A\lvert 0\rangle_E$, $U_{AE}\lvert e\rangle_A\lvert 0\rangle_E=\sqrt{1-p}\lvert e\rangle_A\lvert 0\rangle_E+\sqrt{p}\lvert g\rangle_A\lvert 1\rangle_E$, 其中 $p$ 与时间有关, $\lvert 0\rangle_E$ 是环境的真空态. 原子的演化可用 Kraus 算符和表示: $\rho_A(t)=\sum_iM_i\rho_A(0)M_i^{\dagger}$. Kraus 算符的定义是: $M_i=_E\langle i\rvert U_{AE}\lvert 0\rangle_E$.
+    \begin{itemize}
+        \item[(1)] 试求出 $M_0$ 和 $M_1$.
+        \item[(2)] 设原子初态为 $\rho_A(0)=\begin{bmatrix}
+            a&b\\
+            d&c
+        \end{bmatrix}$, 求出 $\rho_A(t)$.
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    \begin{itemize}
+        \item[(1)] 
+        \item[(2)] 
+    \end{itemize}
+\end{sol}
+
+\begin{prob}
+    二能级原子与单模光场发生双光子共振相互作用, 系统的哈密顿量为 $H=\hbar\lambda[\sigma_-(a^{\dagger})^2+\sigma_+a^2]$. 假设原子初态 ($t=0$ 时刻的量子态) 为激发态 $\lvert e\rangle$, 光场初态 $\lvert n\rangle$.
+    \begin{itemize}
+        \item[(1)] 求系统任意时刻的平均光子数;
+        \item[(2)] 画出平均光子数与时间的关系. (要求给出程序)
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    \begin{itemize}
+        \item[(1)] 
+        \item[(2)] 
+    \end{itemize}
+\end{sol}
+
+\begin{prob}
+    二能级原子与单模光场发生共振作用, 系统的哈密顿量为 $H=\hbar\lambda(\sigma_-a^{\dagger}+\sigma_+a)$. 如果原子 $t=0$ 时刻处于激发态 $\lvert e\rangle$, 而光场处于相干态 $\lvert\alpha\rangle$, 计算任意时刻 $t$ 原子处于基态 $\lvert g\rangle$ 的概率 $P_g(t)$, 并作出图形 (横坐标表示时间, 纵坐标为概率. 为方便, $\alpha=1$).
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    二能级原子与单模光场发生双光子共振相互作用, 系统的哈密顿量为 $H=\hbar\lambda[\sigma_-(a^{\dagger})^2+\sigma_+a^2]$. 假设原子初态 ($t=0$ 时刻的量子态) 为激发态 $\lvert e\rangle$, 光场初态为相干态 $\lvert\alpha\rangle$. 求系统任意时刻的量子态.
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    二能级原子与单模光场发生共振相互作用, 系统的哈密顿量为 $H=\hbar\lambda(\sigma_-a^{\dagger}+\sigma_+a)$, 如果原子 $t=0$ 时刻处于 $\cos\theta\lvert e\rangle+\sin\theta\lvert g\rangle$, 而光场处于相干态 $\lvert\alpha\rangle$, 定义原子算符 $S_1=1/2(\lvert e\rangle\langle g\rvert+\lvert g\rangle\langle e\rvert)$, 求任意时刻 $t$, $S_1$ 的平均值.
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    压缩态的另一种定义: $\lvert\alpha\rangle_g=D(\alpha)S(\xi)\lvert 0\rangle$. 我们学过的压缩态为 $\lvert\beta\rangle=S(\xi(\beta))\lvert 0\rangle$. 若 $\lvert\alpha\rangle_g=\lvert\beta\rangle_g$, 利用它们关于 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$ 的涨落图, 求出 $\alpha$ 和 $\beta$ 的关系。
+\end{prob}
+\begin{sol}
+    
+\end{sol}
+
+\begin{prob}
+    下图椭圆表示某压缩相干态光场的两正交分量 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$ 的涨落范围. 已知椭圆长轴长为 $\Delta X_2=5$, 椭圆中心坐标为 $(0,5)$
+    \begin{itemize}
+        \item[(1)] 若该压缩相干态 $\lvert\beta\rangle_g=S(\xi)D(\beta)\lvert 0\rangle$, 求 $\beta$, $\xi$;
+        \item[(2)] 若压缩相干态 $\lvert\beta\rangle_g=D(\beta)S(\xi)\lvert 0\rangle$, 则 $\beta$, $\xi$ 又是多少?
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    \begin{itemize}
+        \item[(1)] 
+        \item[(2)] 
+    \end{itemize}
+\end{sol}
+\end{document}
