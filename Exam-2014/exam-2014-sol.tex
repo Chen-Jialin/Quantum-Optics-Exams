@@ -19,10 +19,45 @@
 \end{sol}
 
 \begin{prob}
-    增加了一个光子的相干态 (Single-photon-added coherent state (SPACS)), $\lvert\alpha,1\rangle=\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle$, 考虑该辐射场的两个厄米算符 $X_1=\frac{1}{2}(a+a^{\dagger})$, $X_2=\frac{1}{2i}(a-a^{\dagger})$, 它们分别对应于场的复振幅的实部和虚部, 满足对易关系 $[X_1,X_2]=\frac{i}{2}$. 当 $\alpha$ 取何值时 (本体 $\alpha$ 取正实数) SPACS 态是压缩态. (提示: 压缩条件 $(\Delta X_1)^2<1/4$ 或 $(\Delta X_2)^2<1/4$).
+    增加了一个光子的相干态 (Single-photon-added coherent state (SPACS)), $\lvert\alpha,1\rangle=\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle$, 考虑该辐射场的两个厄米算符 $X_1=\frac{1}{2}(a+a^{\dagger})$, $X_2=\frac{1}{2i}(a-a^{\dagger})$, 它们分别对应于场的复振幅的实部和虚部, 满足对易关系 $[X_1,X_2]=\frac{i}{2}$. 当 $\alpha$ 取何值时 (本题 $\alpha$ 取正实数) SPACS 态是压缩态. (提示: 压缩条件 $(\Delta X_1)^2<1/4$ 或 $(\Delta X_2)^2<1/4$).
 \end{prob}
 \begin{sol}
-    
+    $\Delta X_1$ 的涨落计算见 2011 年第 4 题, 当 $\abs{\alpha}>1$ 时, $\Delta X_1<1$, 是压缩态.
+
+    $X_2$ 的均值为
+    \begin{align}
+        \notag\langle X_2\rangle=&\langle\alpha\rvert\frac{a}{\sqrt{1+\abs{\alpha}^2}}\frac{1}{2i}(a-a^{\dagger})\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2i(1+\abs{\alpha}^2)}\langle\alpha\rvert a(a-a^{\dagger})a^{\dagger}\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2i(1+\abs{\alpha}^2)}\langle\alpha\rvert(aaa^{\dagger}-aa^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2i(1+\abs{\alpha}^2)}\langle\alpha\rvert[a(a^{\dagger}a+1)-(a^{\dagger}a+1)a^{\dagger}]\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2i(1+\abs{\alpha}^2)}\langle\alpha\rvert(aa^{\dagger}a+a-a^{\dagger}aa^{\dagger}+a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2i(1+\abs{\alpha}^2)}\langle\alpha\rvert[(a^{\dagger}a+1)a+a-a^{\dagger}(a^{\dagger}a+1)+a^{\dagger}]\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2i(1+\abs{\alpha}^2)}\langle\alpha\rvert(a^{\dagger}aa+2a-a^{\dagger}a^{\dagger}a+2a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&\frac{1}{2i(1+\abs{\alpha}^2)}\langle\alpha\rvert(\alpha^3+2\alpha-\alpha^3-2\alpha)\lvert\alpha\rangle\\
+        =&0.
+    \end{align}
+    $X_2^2$ 的均值为
+    \begin{align}
+        \notag\langle X_2^2\rangle=&\langle\alpha\rvert\frac{a}{\sqrt{1+\abs{\alpha}^2}}\left[\frac{1}{2i}(a-a^{\dagger})\right]^2\frac{a^{\dagger}}{\sqrt{1+\abs{\alpha}^2}}\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert a(aa-aa^{\dagger}-a^{\dagger}a+a^{\dagger}a^{\dagger})a^{\dagger}\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert a(aa-2a^{\dagger}a-1+a^{\dagger}a^{\dagger})a^{\dagger}\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert(aaaa^{\dagger}-2aa^{\dagger}aa^{\dagger}-aa^{\dagger}+aa^{\dagger}a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert[aa(a^{\dagger}a+1)-2(a^{\dagger}a+1)(a^{\dagger}a+1)-(a^{\dagger}a+1)+(a^{\dagger}a+1)a^{\dagger}a^{\dagger}]\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert(aaa^{\dagger}a+aa-2a^{\dagger}aa^{\dagger}a-4a^{\dagger}a-2-a^{\dagger}a-1+a^{\dagger}aa^{\dagger}a^{\dagger}+a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert[a(a^{\dagger}a+1)a+aa-2a^{\dagger}(a^{\dagger}a+1)a-4a^{\dagger}a-2-a^{\dagger}a-1+a^{\dagger}(a^{\dagger}a+1)a^{\dagger}+a^{\dagger}a^{\dagger}]\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert(aa^{\dagger}aa+2aa-2a^{\dagger}a^{\dagger}aa-2a^{\dagger}a-4a^{\dagger}a-2-a^{\dagger}a-1+a^{\dagger}a^{\dagger}aa^{\dagger}+2a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert[(a^{\dagger}a+1)aa+2aa-2a^{\dagger}a^{\dagger}aa-2a^{\dagger}a-4a^{\dagger}a-2-a^{\dagger}a-1+a^{\dagger}a^{\dagger}(a^{\dagger}a+1)+2a^{\dagger}a^{\dagger}]\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert(a^{\dagger}aaa+3aa-2a^{\dagger}a^{\dagger}aa-2a^{\dagger}a-4a^{\dagger}a-2-a^{\dagger}a-1+a^{\dagger}a^{\dagger}a^{\dagger}a+3a^{\dagger}a^{\dagger})\lvert\alpha\rangle\\
+        \notag=&-\frac{1}{4(1+\abs{\alpha}^2)}\langle\alpha\rvert(\alpha^4+3\alpha^2-2\alpha^4-2\alpha^2-4\alpha^2-2-\alpha^2-1+\alpha^4+3\alpha^2)\lvert\alpha\rangle\\
+        \notag=&\frac{\alpha^2+3}{4(1+\alpha^2)}>\frac{1}{4}.
+    \end{align}
+    $X_2$ 的涨落为
+    \begin{align}
+        \Delta X_2=\sqrt{\langle X_2^2\rangle-\langle X_2\rangle^2}=\sqrt{\langle X_2^2\rangle}>\frac{1}{2},
+    \end{align}
+    故无法由 $\Delta X_2$ 判断是否存在压缩.
+
+    综上, 当 $\abs{\alpha}>1$ 时, SPACS 态为压缩态.
 \end{sol}
 
 \begin{prob}
@@ -126,6 +161,20 @@
     \begin{itemize}
         \item[(1)] 若该压缩相干态 $\lvert\beta\rangle_g=S(\xi)D(\beta)\lvert 0\rangle$, 求 $\beta$, $\xi$;
         \item[(2)] 若压缩相干态 $\lvert\beta\rangle_g=D(\beta)S(\xi)\lvert 0\rangle$, 则 $\beta$, $\xi$ 又是多少?
+    \end{itemize}
+\end{prob}
+\begin{sol}
+    \begin{itemize}
+        \item[(1)] 
+        \item[(2)] 
+    \end{itemize}
+\end{sol}
+
+\begin{prob}
+    薛定谔猫态 $\lvert\psi\rangle=x[\lvert\alpha\rangle+\lvert-\alpha\rangle]$,
+    \begin{itemize}
+        \item[(1)] 求归一化系数 $x$,
+        \item[(2)] 定义光场的两个相位正交的振幅分量 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$, 讨论 $X_2$ 的压缩条件.
     \end{itemize}
 \end{prob}
 \begin{sol}
