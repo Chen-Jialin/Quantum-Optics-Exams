@@ -137,6 +137,37 @@
     简述激光多普勒冷却原子方法的原理.
 \end{prob}
 \begin{sol}
-    
+    当原子在光场中运动, 原子受激吸收光子跃迁到激发态后, 通过自发辐射和受激辐射跃迁回基态, 其中受激吸收使原子动量发生变化, 自发辐射产生的光子方向随机, 故造成原子动量变化平均为零, 受激辐射造成的原子与部分受激吸收造成的原子动量变化, 故总过程中原子的动量由 $\bm{p}_0$ 变为 $\bm{p}_0+n\hbar\bm{k}-\langle\sum_i\hbar\bm{p}_i\rangle$, 等效于光场对原子有作用力
+    \begin{align}
+        \bm{F}=\frac{n}{t}\hbar\bm{k}=\gamma\hbar\bm{k},
+    \end{align}
+    其中 $\gamma$ 为原子单位时间内的自发辐射次数.
+    光场中原子的密度矩阵元演化如下:
+    \begin{align}
+        \dot{\rho}_{ab}=&-\left(i\Delta+\frac{\Gamma}{2}\right)\rho_{ab}+i\Omega_R\rho_{aa}-\frac{i}{2}\Omega_R\\
+        \dot{\rho}_{aa}=&-\Gamma\rho_{aa}+\frac{i}{2}\Omega_R(\rho_{ab}-\rho_{ba}),\\
+        \dot{\rho}_{ba}=&\dot{\rho}_{ab}^*,
+    \end{align}
+    其中 $\Delta$ 为激光频率相对于原子跃迁频率的失谐, $\Gamma$ 为能级 a 自发向 能级 b 跃迁的速率, $\Omega_R$ 为 Rabi 频率.
+    稳态下,
+    \begin{align}
+        \dot{\rho}_{ab}=&0,\\
+        \dot{\rho}_{aa}=&0,\\
+    \end{align}
+    解得
+    \begin{align}
+        \rho_{aa}=\frac{\Omega_R^2}{4\Delta^2+\Gamma^2+2\Omega_R^2}.
+    \end{align}
+    故光场对原子的等效作用力为
+    \begin{align}
+        \bm{F}=\Gamma\rho_{aa}\hbar\bm{k}=\Gamma\hbar\bm{k}\frac{\Omega_R^2}{4\Delta^2+\Gamma^2+2\Omega_R^2}.
+    \end{align}
+
+    激光多普勒冷却原子时, 激光频率 $\nu_0$ 略小于原子跃迁频率 $\omega$. 由于多普勒效应, 与光以速率 $v$ 相向和同向而行的原子, 感受到的激光频率为
+    \begin{align}
+        \nu=\nu_0\frac{1\pm\frac{v}{c}}{\sqrt{1+\left(\frac{v}{c}\right)^2}}\approx\nu_0\pm k_0v,
+    \end{align}
+    即与光相向而行的原子, 感受到的激光频率靠近 $\omega$, 失谐更小, 受到的光场的等效作用力更大, 该作用力使原子减速; 与光同向而行的原子, 感受到的激光频率远离 $\omega$, 失谐更大, 受到的光场的等效作用力更小.
+    当用激光从各个方向上照射原子, 就可阻碍朝各个方向运动的原子, 从而实现冷却.
 \end{sol}
 \end{document}
