@@ -287,8 +287,44 @@
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[(1)] 
-        \item[(2)] 
+        \item[(1)] Kraus 算符:
+        \begin{align}
+            M_0&=_E\langle 0\rvert U_{AE}\lvert 0\rangle_E\\
+            \notag&=_E\langle 0\rvert U_{AE}(\lvert g\rangle_A\langle g\rvert+\lvert e\rangle_A\langle e\rvert)\lvert 0\rangle_E\\
+            \notag&=_E\langle 0\rvert(\lvert 0\rangle_E\lvert e\rangle_A\langle g\rvert+\sqrt{1-p}\lvert 0\rangle_E\lvert e\rangle_A\langle e\rvert+\sqrt{p}\lvert 1\rangle_E\lvert g\rangle_A\langle e\rvert)\\
+            &=\lvert e\rangle_A\langle g\rvert+\sqrt{1-p}\lvert e\rangle_A\langle e\rvert,\\
+            \notag M_1&=_E\langle 1\rvert U_{AE}\lvert 0\rangle_E\\
+            \notag&=_E\langle 1\rvert U_{AE}(\lvert g\rangle_A\langle g\rvert+\lvert e\rangle_A\langle e\rvert)\lvert 0\rangle_E\\
+            \notag&=_E\langle 1\rvert(\lvert 0\rangle_E\lvert e\rangle_A\langle g\rvert+\sqrt{1-p}\lvert 0\rangle_E\lvert e\rangle_A\langle e\rvert+\sqrt{p}\lvert 1\rangle_E\lvert g\rangle_A\langle e\rvert)\\
+            &=\sqrt{p}\lvert g\rangle_A\langle e\rvert,
+        \end{align}
+        \item[(2)] $t$ 时刻原子的状态为
+        \begin{align}
+            \notag\rho_A(t)=&\sum_{i=0,1}M_i\rho_A(0)M_i^{\dagger}\\
+            \notag=&\begin{bmatrix}
+                \sqrt{1-p}&1\\
+                0&0
+            \end{bmatrix}\begin{bmatrix}
+                a&b\\
+                d&c
+            \end{bmatrix}\begin{bmatrix}
+                \sqrt{1-p}&0\\
+                1&0
+            \end{bmatrix}+\begin{bmatrix}
+                0&0\\
+                \sqrt{p}&0
+            \end{bmatrix}\begin{bmatrix}
+                a&b\\
+                d&c
+            \end{bmatrix}\begin{bmatrix}
+                0&\sqrt{p}\\
+                0&0
+            \end{bmatrix}\\
+            \notag=&\begin{bmatrix}
+                (1-p)a+\sqrt{1-p}d+\sqrt{1-p}b+c&0\\
+                0&pa
+            \end{bmatrix}.
+        \end{align}
     \end{itemize}
 \end{sol}
 
