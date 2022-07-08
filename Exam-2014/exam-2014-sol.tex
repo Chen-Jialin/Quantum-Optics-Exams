@@ -380,56 +380,93 @@
 \end{prob}
 \begin{sol}
     设系统的状态为
-        \begin{align}
-            \lvert\varphi(t)\rangle_{AF}=\sum_{n=0}^{\infty}[C_{e,n}\lvert e,n\rangle+C_{g,n}\lvert g,n\rangle].
-        \end{align}
-        相互作用绘景下, 系统的状态演化遵循薛定谔方程:
-        \begin{align}
-            i\hbar\frac{\partial}{\partial t}\lvert\varphi(t)\rangle_{AF}=H\lvert\varphi(t)\rangle_{AF},
-        \end{align}
-        即
-        \begin{align}
-            \dot{C}_{e,n}(t)=&-i\lambda\sqrt{(n+1)(n+2)}C_{g,n+2}(t),\\
-            \dot{C}_{g,n+2}(t)=&-i\lambda\sqrt{(n+1)(n+2)}C_{e,n}(t),
-        \end{align}
-        解得对于 $n\in\mathbb{Z}^+$,
-        \begin{align}
-            C_{e,n}(t)=&C_{e,n}(0)\cos[\sqrt{(n+1)(n+2)}\lambda t]-iC_{g,n+2}\sin[\sqrt{(n+1)(n+2)}\lambda t],\\
-            C_{g,n+2}(t)=&C_{g,n+2}(0)\cos[\sqrt{(n+1)(n+2)}\lambda t]-iC_{e,n}(0)\sin[\sqrt{(n+1)(n+2)}\lambda t],
-        \end{align}
-        此外,
-        \begin{align}
-            C_{g,0}(t)=&C_{g,0}(0),\\
-            C_{g,1}(t)=&C_{g,1}(0).
-        \end{align}
-        原子初态为激发态 $\lvert g\rangle$, 光场初态为相干态 $\lvert\alpha\rangle=e^{-\abs{\alpha}^2/2}\sum_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\lvert n\rangle$, 即 $C_{g,n}=e^{-\abs{\alpha}^2/2}\frac{\alpha^n}{\sqrt{n!}}$, 将其代数上面死式中得对 $n\in\mathbb{Z}^+$,
-        \begin{align}
-            C_{e,n}=-ie^{-\abs{\alpha}^2/2}\frac{\alpha^{n+2}}{\sqrt{(n+2)!}}\sin[\sqrt{(n+1)(n+2)}\lambda t],\\
-            C_{g,n+2}=e^{-\abs{\alpha}^2/2}\frac{\alpha^{n+2}}{\sqrt{(n+2)!}}\cos[\sqrt{(n+1)(n+2)}\lambda t],
-        \end{align}
-        此外,
-        \begin{align}
-            C_{g,0}(t)=&e^{-\abs{\alpha}^2/2},\\
-            C_{g,1}(t)=&e^{-\abs{\alpha}^2/2}\alpha.
-        \end{align}
-        若取 $\alpha=1$, 则任意时刻 $t$ 原子处于基态的概率为
-        \begin{align}
-            P_g(t)=\sum_{n=0}^{\infty}\abs{C_{g,n}(t)}^2=e^{-1}\left[2+\sum_{n=2}^{\infty}\frac{\cos^2[\sqrt{n(n-1)}\lambda t]}{n!}\right],
-        \end{align}
-        如图 \ref{2014-8} 所示.
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=.5\columnwidth]{Figures/2014-8.eps}
-            \caption{任意时刻 $t$ 原子处于基态的概率.}
-            \label{2014-8}
-        \end{figure}
+    \begin{align}
+        \lvert\varphi(t)\rangle_{AF}=\sum_{n=0}^{\infty}[C_{e,n}\lvert e,n\rangle+C_{g,n}\lvert g,n\rangle].
+    \end{align}
+    相互作用绘景下, 系统的状态演化遵循薛定谔方程:
+    \begin{align}
+        i\hbar\frac{\partial}{\partial t}\lvert\varphi(t)\rangle_{AF}=H\lvert\varphi(t)\rangle_{AF},
+    \end{align}
+    即
+    \begin{align}
+        \dot{C}_{e,n}(t)=&-i\lambda\sqrt{(n+1)(n+2)}C_{g,n+2}(t),\\
+        \dot{C}_{g,n+2}(t)=&-i\lambda\sqrt{(n+1)(n+2)}C_{e,n}(t),
+    \end{align}
+    解得对于 $n\in\mathbb{Z}^+$,
+    \begin{align}
+        C_{e,n}(t)=&C_{e,n}(0)\cos[\sqrt{(n+1)(n+2)}\lambda t]-iC_{g,n+2}\sin[\sqrt{(n+1)(n+2)}\lambda t],\\
+        C_{g,n+2}(t)=&C_{g,n+2}(0)\cos[\sqrt{(n+1)(n+2)}\lambda t]-iC_{e,n}(0)\sin[\sqrt{(n+1)(n+2)}\lambda t],
+    \end{align}
+    此外,
+    \begin{align}
+        C_{g,0}(t)=&C_{g,0}(0),\\
+        C_{g,1}(t)=&C_{g,1}(0).
+    \end{align}
+    原子初态为激发态 $\lvert g\rangle$, 光场初态为相干态 $\lvert\alpha\rangle=e^{-\abs{\alpha}^2/2}\sum_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\lvert n\rangle$, 即 $C_{g,n}=e^{-\abs{\alpha}^2/2}\frac{\alpha^n}{\sqrt{n!}}$, 将其代数上面四式中得对 $n\in\mathbb{Z}^+$,
+    \begin{align}
+        C_{e,n}=-ie^{-\abs{\alpha}^2/2}\frac{\alpha^{n+2}}{\sqrt{(n+2)!}}\sin[\sqrt{(n+1)(n+2)}\lambda t],\\
+        C_{g,n+2}=e^{-\abs{\alpha}^2/2}\frac{\alpha^{n+2}}{\sqrt{(n+2)!}}\cos[\sqrt{(n+1)(n+2)}\lambda t],
+    \end{align}
+    此外,
+    \begin{align}
+        C_{g,0}(t)=&e^{-\abs{\alpha}^2/2},\\
+        C_{g,1}(t)=&e^{-\abs{\alpha}^2/2}\alpha.
+    \end{align}
+    若取 $\alpha=1$, 则任意时刻 $t$ 原子处于基态的概率为
+    \begin{align}
+        P_g(t)=\sum_{n=0}^{\infty}\abs{C_{g,n}(t)}^2=e^{-1}\left[2+\sum_{n=2}^{\infty}\frac{\cos^2[\sqrt{n(n-1)}\lambda t]}{n!}\right],
+    \end{align}
+    如图 \ref{2014-8} 所示.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.5\columnwidth]{Figures/2014-8.eps}
+        \caption{任意时刻 $t$ 原子处于基态的概率.}
+        \label{2014-8}
+    \end{figure}
 \end{sol}
 
 \begin{prob}
     二能级原子与单模光场发生双光子共振相互作用, 系统的哈密顿量为 $H=\hbar\lambda[\sigma_-(a^{\dagger})^2+\sigma_+a^2]$. 假设原子初态 ($t=0$ 时刻的量子态) 为激发态 $\lvert e\rangle$, 光场初态为相干态 $\lvert\alpha\rangle$. 求系统任意时刻的量子态.
 \end{prob}
 \begin{sol}
-    
+    设系统的状态为
+    \begin{align}
+        \lvert\varphi(t)\rangle_{AF}=\sum_{n=0}^{\infty}[C_{e,n}\lvert e,n\rangle+C_{g,n}\lvert g,n\rangle].
+    \end{align}
+    相互作用绘景下, 系统的状态演化遵循薛定谔方程:
+    \begin{align}
+        i\hbar\frac{\partial}{\partial t}\lvert\varphi(t)\rangle_{AF}=H\lvert\varphi(t)\rangle_{AF},
+    \end{align}
+    即
+    \begin{align}
+        \dot{C}_{e,n}(t)=&-i\lambda\sqrt{(n+1)(n+2)}C_{g,n+2}(t),\\
+        \dot{C}_{g,n+2}(t)=&-i\lambda\sqrt{(n+1)(n+2)}C_{e,n}(t),
+    \end{align}
+    解得对于 $n\in\mathbb{Z}^+$,
+    \begin{align}
+        C_{e,n}(t)=&C_{e,n}(0)\cos[\sqrt{(n+1)(n+2)}\lambda t]-iC_{g,n+2}\sin[\sqrt{(n+1)(n+2)}\lambda t],\\
+        C_{g,n+2}(t)=&C_{g,n+2}(0)\cos[\sqrt{(n+1)(n+2)}\lambda t]-iC_{e,n}(0)\sin[\sqrt{(n+1)(n+2)}\lambda t],
+    \end{align}
+    此外,
+    \begin{align}
+        C_{g,0}(t)=&C_{g,0}(0),\\
+        C_{g,1}(t)=&C_{g,1}(0).
+    \end{align}
+    原子初态为激发态 $\lvert g\rangle$, 光场初态为相干态 $\lvert\alpha\rangle=e^{-\abs{\alpha}^2/2}\sum_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\lvert n\rangle$, 即 $C_{g,n}=e^{-\abs{\alpha}^2/2}\frac{\alpha^n}{\sqrt{n!}}$, 将其代数上面四式中得对 $n\in\mathbb{Z}^+$,
+    \begin{align}
+        C_{e,n}=-ie^{-\abs{\alpha}^2/2}\frac{\alpha^{n+2}}{\sqrt{(n+2)!}}\sin[\sqrt{(n+1)(n+2)}\lambda t],\\
+        C_{g,n+2}=e^{-\abs{\alpha}^2/2}\frac{\alpha^{n+2}}{\sqrt{(n+2)!}}\cos[\sqrt{(n+1)(n+2)}\lambda t],
+    \end{align}
+    此外,
+    \begin{align}
+        C_{g,0}(t)=&e^{-\abs{\alpha}^2/2},\\
+        C_{g,1}(t)=&e^{-\abs{\alpha}^2/2}\alpha.
+    \end{align}
+    故系统在任意时刻 $t$ 的量子态为
+    \begin{align}
+        \notag&\lvert\varphi(t)\rangle_{AF}\\
+        =&e^{-\abs{\alpha}^2/2}\left\{\lvert g,0\rangle+\alpha\lvert g,1\rangle+\sum_{n=0}^{\infty}\frac{\alpha^{n+2}}{\sqrt{(n+2)}}\{-i\sin[\sqrt{(n+1)(n+2)}\lambda t]\lvert e,n\rangle+\cos[\sqrt{(n+1)(n+2)}\lambda t]\lvert g,n+2\rangle\}\right\}.
+    \end{align}
 \end{sol}
 
 \begin{prob}
