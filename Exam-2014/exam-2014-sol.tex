@@ -551,13 +551,50 @@
     薛定谔猫态 $\lvert\psi\rangle=x[\lvert\alpha\rangle+\lvert-\alpha\rangle]$,
     \begin{itemize}
         \item[(1)] 求归一化系数 $x$,
-        \item[(2)] 定义光场的两个相位正交的振幅分量 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$, 讨论 $X_2$ 的压缩条件.
+        \item[(2)] 定义光场的两个相位正交的振幅分量 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$, 讨论 $X_1$ 的压缩条件.
     \end{itemize}
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[(1)] 
-        \item[(2)] 
+        \item[(1)] 由归一化条件,
+        \begin{align}
+            \notag\langle\psi\vert\psi\rangle=&\abs{x}^2(\langle\alpha\rvert+\langle-\alpha\rvert)(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\abs{x}^2(\langle\alpha\vert\alpha\rangle+\langle\alpha\vert-\alpha\rangle+\langle-\alpha\vert\alpha\rangle+\langle-\alpha\rvert-\alpha\rangle)\\
+            \notag=&2\abs{x}^2[1+\exp(-2\abs{\alpha}^2)]\\
+            =&1,
+        \end{align}
+        \begin{align}
+            \Longrightarrow x=[2+2\exp(-2\abs{\alpha}^2)]^{-1/2}.
+        \end{align}
+        \item[(2)] $X_1$ 的均值为
+        \begin{align}
+            \notag\langle X_1\rangle=&N^*(\langle\alpha\rvert+\langle-\alpha\rvert)\frac{1}{2}(a+a^{\dagger})N(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\frac{\abs{N}^2}{2}[(\langle\alpha\rvert+\langle-\alpha\rvert)(\alpha\lvert\alpha\rangle-\alpha\lvert-\alpha\rangle)+(\alpha^*\langle\alpha\rvert-\alpha^*\langle-\alpha\rvert)(\lvert\alpha\rangle+\lvert-\alpha\rangle)]\\
+            \notag=&\frac{\abs{N}^2}{2}[\alpha(1-\exp(-2\abs{\alpha}^2)+\exp(-2\abs{\alpha}^2)-1)+\alpha^*(1+\exp(-2\abs{\alpha}^2)-\exp(-2\abs{\alpha}^2)-1)]\\
+            =&0.
+        \end{align}
+        $X_1^2$ 的均值为
+        \begin{align}
+            \notag\langle X_1^2\rangle=&N^*(\langle\alpha\rvert+\langle-\alpha\rvert)\left[\frac{1}{2}(a+a^{\dagger})\right]^2N(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\frac{\abs{N}^2}{4}(\langle\alpha\rvert+\langle-\alpha\rvert)(aa+aa^{\dagger}+a^{\dagger}a+a^{\dagger}a^{\dagger})(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\frac{\abs{N}^2}{4}(\langle\alpha\rvert+\langle-\alpha\rvert)(aa+2a^{\dagger}a+1+a^{\dagger}a^{\dagger})(\lvert\alpha\rangle+\lvert-\alpha\rangle)\\
+            \notag=&\frac{\abs{N}^2}{4}[(\langle\alpha\rvert+\langle-\alpha\rvert)(\alpha^2\lvert\alpha\rangle+\alpha^2\lvert-\alpha\rangle)+2(\alpha^*\langle\alpha\rvert-\alpha^*\langle-\alpha\rvert)(\alpha\lvert\alpha\rangle-\alpha\lvert-\alpha\rangle)\\
+            \notag&+(\langle\alpha\rvert+\langle-\alpha\rvert)(\lvert\alpha\rangle+\lvert-\alpha\rangle)+((\alpha^*)^2\langle\alpha\rvert+(\alpha^*)^2\langle-\alpha\rvert)(\lvert\alpha\rangle+\lvert-\alpha\rangle)]\\
+            \notag=&\frac{\abs{N}^2}{4}[\alpha^2(1+\exp(-2\abs{\alpha}^2)+\exp(-2\abs{\alpha}^2)+1)+2\abs{\alpha}^2(1-\exp(-2\abs{\alpha}^2)-\exp(-2\abs{\alpha}^2)+1)\\
+            \notag&+(1+\exp(-2\abs{\alpha}^2)+\exp(-2\abs{\alpha}^2)+1)+(\alpha^*)^2(1+\exp(-2\abs{\alpha}^2)+\exp(-2\abs{\alpha}^2)+1)]\\
+            \notag=&\frac{\abs{N}^2}{2}[(\alpha^2+(\alpha^*)^2+1)(1+\exp(-2\abs{\alpha}^2))+2\abs{\alpha}^2(1-\exp(-2\abs{\alpha}^2)]\\
+            \notag=&\frac{1}{4}\left[1+\alpha^2+(\alpha^*)^2+2\abs{\alpha}^2\frac{1-\exp(-2\abs{\alpha}^2)}{1+\exp(-2\abs{\alpha}^2)}\right]\\
+            =&\frac{1}{4}\left[1-4\frac{\re[\alpha]^2-\im[\alpha]^2\exp(-2\abs{\alpha}^2)}{1+\exp(-2\abs{\alpha}^2)}\right].
+        \end{align}
+        $X_1$ 的涨落为
+        \begin{align}
+            \Delta X_1=\sqrt{\langle X_1^2\rangle-\langle X_1\rangle^2}=\sqrt{\langle X_1^2\rangle}=\frac{1}{2}\sqrt{1-4\frac{\re[\alpha]^2-\im[\alpha]^2\exp(-2\abs{\alpha}^2)}{1+\exp(-2\abs{\alpha}^2)}}.
+        \end{align}
+        $X_1$ 的压缩条件为
+        \begin{gather}
+            \Delta X_1<\frac{1}{2},\\
+            \re[\alpha]^2<\im[\alpha]^2\exp(-2\abs{\alpha}^2).
+        \end{gather}
     \end{itemize}
 \end{sol}
 \end{document}
