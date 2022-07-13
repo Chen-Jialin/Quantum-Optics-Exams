@@ -553,7 +553,7 @@
 \end{sol}
 
 \begin{prob}
-    下图椭圆表示某压缩相干态光场的两正交分量 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$ 的涨落范围. 已知椭圆长轴长为 $\Delta X_2=5$, 椭圆中心坐标为 $(0,5)$
+    下图椭圆表示某压缩相干态光场的两正交分量 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$ 的涨落范围. 已知椭圆长轴长为 $\Delta X_2=5$, 椭圆中心坐标为 $(0,6)$
     \begin{itemize}
         \item[(1)] 若该压缩相干态 $\lvert\beta\rangle_g=S(\xi)D(\beta)\lvert 0\rangle$, 求 $\beta$, $\xi$;
         \item[(2)] 若压缩相干态 $\lvert\beta\rangle_g=D(\beta)S(\xi)\lvert 0\rangle$, 则 $\beta$, $\xi$ 又是多少?
@@ -561,8 +561,30 @@
 \end{prob}
 \begin{sol}
     \begin{itemize}
-        \item[(1)] 
-        \item[(2)] 
+        \item[(1)] 若该压缩相干态 $\lvert\beta\rangle_g=S(\xi)D(\beta)\lvert 0\rangle$, 则
+        \begin{align}
+            \langle X_1\rangle=&\frac{1}{2}(\langle a\rangle+\langle a^{\dagger}\rangle)=\frac{1}{2}[(\beta+\beta^*)\cosh r-(\beta^*e^{i\theta}+\beta e^{-i\theta})\sinh r]=0,\\
+            \langle X_2\rangle=&\frac{-i}{2}(\langle a\rangle-\langle a^{\dagger}\rangle)=\frac{1}{2}[(\beta-\beta^*)\cosh r-(\beta^*e^{i\theta}-\beta e^{-i\theta})\sinh r]=6,\\
+            \Delta X_2=&\frac{1}{2}e^r=5,
+        \end{align}
+        故
+        \begin{align}
+            \beta=&\frac{3}{5}i,\\
+            r=&\ln 10,\\
+            \theta=&0,\\
+            \epsilon=&re^{i\theta}=\ln 10.
+        \end{align}
+        \item[(2)] 若压缩相干态 $\lvert\beta\rangle_g=D(\beta)S(\xi)\lvert 0\rangle$, 则
+        \begin{align}
+            \langle X_1\rangle=&\frac{1}{2}(\beta+\beta^*)=0,\\
+            \langle X_2\rangle=&\frac{-i}{2}(\beta-\beta^*)=6,\\
+            \Delta X_2=&\frac{1}{2}e^r=5,
+        \end{align}
+        故
+        \begin{align}
+            \beta=&6i,\\
+            \epsilon=&re^{i\theta}=\ln 10.
+        \end{align}
     \end{itemize}
 \end{sol}
 
