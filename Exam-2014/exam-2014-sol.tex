@@ -527,10 +527,29 @@
 \end{sol}
 
 \begin{prob}
-    压缩态的另一种定义: $\lvert\alpha\rangle_g=D(\alpha)S(\xi)\lvert 0\rangle$. 我们学过的压缩态为 $\lvert\beta\rangle=S(\xi(\beta))\lvert 0\rangle$. 若 $\lvert\alpha\rangle_g=\lvert\beta\rangle_g$, 利用它们关于 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$ 的涨落图, 求出 $\alpha$ 和 $\beta$ 的关系。
+    压缩态的另一种定义: $\lvert\alpha\rangle_g=D(\alpha)S(\xi)\lvert 0\rangle$. 我们学过的压缩态为 $\lvert\beta\rangle_g=S(\xi)D(\beta)\lvert 0\rangle$. 若 $\lvert\alpha\rangle_g=\lvert\beta\rangle_g$, 利用它们关于 $X_1=1/2(a+a^{\dagger})$ 和 $X_2=-i/2(a-a^{\dagger})$ 的涨落图, 求出 $\alpha$ 和 $\beta$ 的关系。
 \end{prob}
 \begin{sol}
-    
+    对 $\lvert\beta\rangle_g=S(\xi)D(\beta)\lvert 0\rangle$, $a$ 的均值为
+    \begin{align}
+        \notag\langle a\rangle=&_g\langle\beta\rvert a\lvert\beta\rangle_g=\langle 0\rvert D^{\dagger}(\beta)S^{\dagger}(\xi)aS(\xi)D(\beta)\lvert 0\rangle_g=\langle\beta\rvert S^{\dagger}(\xi)aS(\xi)\lvert\beta\rangle\\
+        \notag=&\langle\beta\rvert\exp[-\frac{1}{2}\xi^*a^2+\frac{1}{2}\xi(a^{\dagger})^2]a\exp[\frac{1}{2}\xi^*a^2-\frac{1}{2}\xi(a^{\dagger})^2]\lvert\beta\rangle\\
+        \notag=&\langle\beta\rvert(a\cosh r-a^{\dagger}e^{i\theta}\sinh r)\lvert\beta\rangle\\
+        =&\beta\cosh r-\beta^*e^{i\theta}\sinh r.
+    \end{align}
+
+    对 $\lvert\alpha\rangle_g=S(\xi)D(\alpha)\lvert 0\rangle$, $a$ 的均值为
+    \begin{align}
+        \notag\langle a\rangle=&_g\langle\alpha\rvert a\lvert\alpha\rangle_g=\langle 0\rvert S^{\dagger}(\xi)D^{\dagger}(\alpha)aD(\alpha)S(\xi)\lvert 0\rangle\\
+        \notag=&\langle 0\rvert S^{\dagger}(\xi)(a+\alpha)S(\xi)\lvert 0\rangle\\
+        \notag=&\langle 0\rvert(a\cosh r-a^{\dagger}e^{i\theta}\sinh r+\alpha)\lvert 0\rangle\\
+        =&\alpha.
+    \end{align}
+
+    故
+    \begin{align}
+        \alpha=\beta\cosh r-\beta^*e^{i\theta}\sinh r.
+    \end{align}
 \end{sol}
 
 \begin{prob}
